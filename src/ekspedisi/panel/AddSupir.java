@@ -48,7 +48,7 @@ public class AddSupir extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        inputSupir1 = new javax.swing.JButton();
+        cancelSupir = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Tambah Data Supir");
@@ -132,10 +132,10 @@ public class AddSupir extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        inputSupir1.setText("cancel");
-        inputSupir1.addActionListener(new java.awt.event.ActionListener() {
+        cancelSupir.setText("cancel");
+        cancelSupir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSupir1ActionPerformed(evt);
+                cancelSupirActionPerformed(evt);
             }
         });
 
@@ -156,7 +156,7 @@ public class AddSupir extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(inputSupir1)
+                        .addComponent(cancelSupir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inputSupir))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -247,7 +247,7 @@ public class AddSupir extends javax.swing.JPanel {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(inputSupir)
-                            .addComponent(inputSupir1))
+                            .addComponent(cancelSupir))
                         .addGap(22, 22, 22))))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -280,9 +280,9 @@ public class AddSupir extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSupirActionPerformed
 
-    private void inputSupir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSupir1ActionPerformed
+    private void cancelSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelSupirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputSupir1ActionPerformed
+    }//GEN-LAST:event_cancelSupirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -291,8 +291,8 @@ public class AddSupir extends javax.swing.JPanel {
     private javax.swing.JTextField NamaSupir1;
     private javax.swing.JTextField NarekSupir;
     private javax.swing.JTextField NorekSupir;
+    private javax.swing.JButton cancelSupir;
     private javax.swing.JButton inputSupir;
-    private javax.swing.JButton inputSupir1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -309,4 +309,18 @@ public class AddSupir extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel namaAddSupir;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the cancelSupir
+     */
+    public javax.swing.JButton getCancelSupir() {
+        return cancelSupir;
+    }
+
+    /**
+     * @return the inputSupir
+     */
+    public javax.swing.JButton getInputSupir() {
+        return inputSupir;
+    }
 }
