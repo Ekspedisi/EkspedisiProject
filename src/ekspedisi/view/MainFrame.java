@@ -60,6 +60,7 @@ public class MainFrame extends javax.swing.JFrame {
         direktori1 = new ekspedisi.panel.Direktori();
         orderPanel1 = new ekspedisi.panel.OrderPanel();
         premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
+        laporanRekening1 = new ekspedisi.panel.LaporanRekening();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -177,6 +178,7 @@ public class MainFrame extends javax.swing.JFrame {
         MainPanel.add(direktori1, "direktori");
         MainPanel.add(orderPanel1, "order");
         MainPanel.add(premiSupirPanel1, "premi");
+        MainPanel.add(laporanRekening1, "laprek");
 
         javax.swing.GroupLayout BgPanelLayout = new javax.swing.GroupLayout(BgPanel);
         BgPanel.setLayout(BgPanelLayout);
@@ -262,6 +264,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private ekspedisi.panel.LaporanRekening laporanRekening1;
     private ekspedisi.panel.OrderPanel orderPanel1;
     private ekspedisi.panel.PremiSupirPanel premiSupirPanel1;
     // End of variables declaration//GEN-END:variables
