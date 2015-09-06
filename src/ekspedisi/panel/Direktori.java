@@ -45,7 +45,7 @@ public class Direktori extends javax.swing.JPanel {
 
         DelBtn.setText("Delete");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supir", "Truk", "Pabrik", "PT. Gabungan" }));
 
         jLabel1.setText("Pilih Direktori");
 
