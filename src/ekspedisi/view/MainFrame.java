@@ -5,6 +5,8 @@
  */
 package ekspedisi.view;
 
+import ekspedisi.controller.LandingController;
+
 /**
  *
  * @author M Arif Royanto
@@ -15,9 +17,12 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    LandingController controller;
     public MainFrame() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        controller = new LandingController(MainPanel, this);
     }
     
     public static MainFrame getInstace(){
@@ -51,6 +56,10 @@ public class MainFrame extends javax.swing.JFrame {
         PremiBtn = new javax.swing.JButton();
         LapRekBtn = new javax.swing.JButton();
         MainPanel = new javax.swing.JPanel();
+        homePanel1 = new ekspedisi.panel.HomePanel();
+        direktori1 = new ekspedisi.panel.Direktori();
+        orderPanel1 = new ekspedisi.panel.OrderPanel();
+        premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -157,13 +166,17 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(PremiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LapRekBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MainPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         MainPanel.setPreferredSize(new java.awt.Dimension(600, 450));
         MainPanel.setRequestFocusEnabled(false);
         MainPanel.setLayout(new java.awt.CardLayout());
+        MainPanel.add(homePanel1, "home");
+        MainPanel.add(direktori1, "direktori");
+        MainPanel.add(orderPanel1, "order");
+        MainPanel.add(premiSupirPanel1, "premi");
 
         javax.swing.GroupLayout BgPanelLayout = new javax.swing.GroupLayout(BgPanel);
         BgPanel.setLayout(BgPanelLayout);
@@ -187,8 +200,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -243,10 +256,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel TittlePanel;
     private javax.swing.JLabel TittleText1;
     private javax.swing.JLabel TittleText2;
+    private ekspedisi.panel.Direktori direktori1;
+    private ekspedisi.panel.HomePanel homePanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private ekspedisi.panel.OrderPanel orderPanel1;
+    private ekspedisi.panel.PremiSupirPanel premiSupirPanel1;
     // End of variables declaration//GEN-END:variables
 
     /**

@@ -29,6 +29,7 @@ public class LandingController {
         controller.setCardLayout((CardLayout) MainPanel.getLayout());
         controller.setParentCard(MainPanel);
         
+        
         MainFrame.getHomeBtn().addActionListener(new ActionListener() {
 
             @Override
