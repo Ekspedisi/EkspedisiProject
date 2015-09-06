@@ -44,7 +44,7 @@ public class AddGabungan extends javax.swing.JPanel {
         NorekSupir = new javax.swing.JTextField();
         NarekSupir = new javax.swing.JTextField();
         inputSupir = new javax.swing.JButton();
-        inputSupir1 = new javax.swing.JButton();
+        cancelSupir = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Tambah Data PT Gabungan");
@@ -106,7 +106,7 @@ public class AddGabungan extends javax.swing.JPanel {
             }
         });
 
-        inputSupir1.setText("cancel");
+        cancelSupir.setText("cancel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,7 +123,7 @@ public class AddGabungan extends javax.swing.JPanel {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(inputSupir1)
+                                    .addComponent(cancelSupir)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(inputSupir))
                                 .addGroup(layout.createSequentialGroup()
@@ -188,7 +188,7 @@ public class AddGabungan extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputSupir)
-                    .addComponent(inputSupir1))
+                    .addComponent(cancelSupir))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -224,8 +224,8 @@ public class AddGabungan extends javax.swing.JPanel {
     private javax.swing.JTextField NamaSupir1;
     private javax.swing.JTextField NarekSupir;
     private javax.swing.JTextField NorekSupir;
+    private javax.swing.JButton cancelSupir;
     private javax.swing.JButton inputSupir;
-    private javax.swing.JButton inputSupir1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
