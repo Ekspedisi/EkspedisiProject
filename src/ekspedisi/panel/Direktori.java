@@ -16,7 +16,7 @@ public class Direktori extends javax.swing.JPanel {
     /**
      * Creates new form Direktori
      */
-    DirektoriController controller;
+    private DirektoriController controller;
     public Direktori() {
         initComponents();
         
@@ -43,11 +43,11 @@ public class Direktori extends javax.swing.JPanel {
         AddBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
         DelBtn = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        DirCombo = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelDir = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
         DialogSupir.setSize(new java.awt.Dimension(505, 285));
@@ -74,13 +74,13 @@ public class Direktori extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supir", "Truk", "Pabrik", "PT. Gabungan" }));
+        DirCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supir", "Truk", "Pabrik", "PT. Gabungan" }));
 
         jLabel1.setText("Pilih Direktori");
 
         jLabel2.setText(":");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelDir.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -91,7 +91,7 @@ public class Direktori extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelDir);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Direktori Data");
@@ -121,7 +121,7 @@ public class Direktori extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jLabel2)
                                     .addGap(8, 8, 8)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(DirCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 361, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -132,7 +132,7 @@ public class Direktori extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DirCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -158,17 +158,17 @@ public class Direktori extends javax.swing.JPanel {
     private javax.swing.JDialog DialogPabrik;
     private javax.swing.JDialog DialogSupir;
     private javax.swing.JDialog DialogTruk;
+    private javax.swing.JComboBox DirCombo;
     private javax.swing.JButton EditBtn;
+    private javax.swing.JTable TabelDir;
     private ekspedisi.panel.AddGabungan addGabungan1;
     private ekspedisi.panel.AddPabrik addPabrik1;
     private ekspedisi.panel.AddSupir addSupir1;
     private ekspedisi.panel.AddTruk addTruk1;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -252,6 +252,27 @@ public class Direktori extends javax.swing.JPanel {
      * @return the jComboBox1
      */
     public javax.swing.JComboBox getjComboBox1() {
-        return jComboBox1;
+        return getDirCombo();
+    }
+
+    /**
+     * @return the TabelDir
+     */
+    public javax.swing.JTable getTabelDir() {
+        return TabelDir;
+    }
+
+    /**
+     * @return the controller
+     */
+    public DirektoriController getController() {
+        return controller;
+    }
+
+    /**
+     * @return the DirCombo
+     */
+    public javax.swing.JComboBox getDirCombo() {
+        return DirCombo;
     }
 }

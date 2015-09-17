@@ -343,8 +343,8 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public javax.swing.JButton getBukuBesarBtn() {
         return BukuBesarBtn;
-     * @return the direktori1
-     */
+    }
+     
     public ekspedisi.panel.Direktori getDirektori1() {
         return direktori1;
     }
