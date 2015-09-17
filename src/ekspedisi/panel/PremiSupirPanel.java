@@ -5,17 +5,21 @@
  */
 package ekspedisi.panel;
 
+import ekspedisi.controller.PremiController;
+
 /**
  *
  * @author M Arif Royanto
  */
-public class PremiSupirPanel extends javax.swing.JPanel {
 
+public class PremiSupirPanel extends javax.swing.JPanel {
+    PremiController cok ;
     /**
      * Creates new form PremiSupirPanel
      */
     public PremiSupirPanel() {
         initComponents();
+        cok = new PremiController(this);
     }
 
     /**
@@ -27,6 +31,8 @@ public class PremiSupirPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog2 = new javax.swing.JDialog();
+        addPremiSupir1 = new ekspedisi.panel.AddPremiSupir();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -35,10 +41,13 @@ public class PremiSupirPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        AddPremiBtn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
+
+        jDialog2.setPreferredSize(new java.awt.Dimension(506, 332));
+        jDialog2.getContentPane().add(addPremiSupir1, java.awt.BorderLayout.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Premi Supir");
@@ -73,7 +82,7 @@ public class PremiSupirPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Daftar Premi yang telah dibayar :");
 
-        jButton1.setText("Add");
+        AddPremiBtn.setText("Add");
 
         jButton2.setText("Detail ..");
 
@@ -88,7 +97,7 @@ public class PremiSupirPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton3)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(AddPremiBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -118,7 +127,7 @@ public class PremiSupirPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(AddPremiBtn)
                     .addComponent(jButton2))
                 .addGap(25, 25, 25)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,9 +143,11 @@ public class PremiSupirPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton AddPremiBtn;
+    private ekspedisi.panel.AddPremiSupir addPremiSupir1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -147,4 +158,173 @@ public class PremiSupirPanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the addPremiSupir1
+     */
+    
+    /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return getAddPremiBtn();
+    }
+
+    /**
+     * @param jButton1 the jButton1 to set
+     */
+    public void setjButton1(javax.swing.JButton jButton1) {
+        this.AddPremiBtn = jButton1;
+    }
+
+    /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
+     * @param jButton2 the jButton2 to set
+     */
+    public void setjButton2(javax.swing.JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    /**
+     * @return the jButton3
+     */
+    public javax.swing.JButton getjButton3() {
+        return jButton3;
+    }
+
+    /**
+     * @param jButton3 the jButton3 to set
+     */
+    public void setjButton3(javax.swing.JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    /**
+     * @return the jDialog1
+     */
+    
+    /**
+     * @return the jScrollPane1
+     */
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    /**
+     * @param jScrollPane1 the jScrollPane1 to set
+     */
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    /**
+     * @return the jScrollPane2
+     */
+    public javax.swing.JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    /**
+     * @param jScrollPane2 the jScrollPane2 to set
+     */
+    public void setjScrollPane2(javax.swing.JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    /**
+     * @return the jSeparator1
+     */
+    public javax.swing.JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    /**
+     * @param jSeparator1 the jSeparator1 to set
+     */
+    public void setjSeparator1(javax.swing.JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    /**
+     * @return the jSeparator2
+     */
+    public javax.swing.JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    /**
+     * @param jSeparator2 the jSeparator2 to set
+     */
+    public void setjSeparator2(javax.swing.JSeparator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    /**
+     * @return the jTable1
+     */
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
+
+    /**
+     * @param jTable1 the jTable1 to set
+     */
+    public void setjTable1(javax.swing.JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    /**
+     * @return the jTable2
+     */
+    public javax.swing.JTable getjTable2() {
+        return jTable2;
+    }
+
+    /**
+     * @param jTable2 the jTable2 to set
+     */
+    public void setjTable2(javax.swing.JTable jTable2) {
+        this.jTable2 = jTable2;
+    }
+
+    /**
+     * @return the AddPremiBtn
+     */
+    public javax.swing.JButton getAddPremiBtn() {
+        return AddPremiBtn;
+    }
+
+    /**
+     * @return the PremiDialog
+     */
+    public javax.swing.JDialog getPremiDialog() {
+        return jDialog2;
+    }
+
+    /**
+     * @param PremiDialog the PremiDialog to set
+     */
+    public void setPremiDialog(javax.swing.JDialog PremiDialog) {
+        this.jDialog2 = PremiDialog;
+    }
+
+    /**
+     * @return the addPremiSupir2
+     */
+    public ekspedisi.panel.AddPremiSupir getAddPremiSupir1() {
+        return addPremiSupir1;
+    }
+
+    /**
+     * @param addPremiSupir2 the addPremiSupir2 to set
+     */
+    public void setAddPremiSupir1(ekspedisi.panel.AddPremiSupir addPremiSupir1) {
+        this.addPremiSupir1 = addPremiSupir1;
+    }
 }
