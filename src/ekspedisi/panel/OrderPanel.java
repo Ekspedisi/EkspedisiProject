@@ -27,7 +27,6 @@ public class OrderPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField4 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -91,8 +90,6 @@ public class OrderPanel extends javax.swing.JPanel {
         AddOrder = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-
-        jTextField4.setText("jTextField4");
 
         jLabel1.setFont(new java.awt.Font("Script MT Bold", 1, 24)); // NOI18N
         jLabel1.setText("Order DM");
@@ -560,6 +557,110 @@ public class OrderPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the AddOrder
+     */
+    public javax.swing.JButton getAddOrder() {
+        return AddOrder;
+    }
+
+    /**
+     * @return the BarangTxt
+     */
+    public javax.swing.JTextField getBarangTxt() {
+        return BarangTxt;
+    }
+
+    /**
+     * @return the BeratTxt
+     */
+    public javax.swing.JTextField getBeratTxt() {
+        return BeratTxt;
+    }
+
+    /**
+     * @return the BeratTxt1
+     */
+    public javax.swing.JTextField getBeratTxt1() {
+        return BeratTxt1;
+    }
+
+    /**
+     * @return the BoronganCb
+     */
+    public javax.swing.JCheckBox getBoronganCb() {
+        return BoronganCb;
+    }
+
+    /**
+     * @return the Inv_No
+     */
+    public javax.swing.JTextField getInv_No() {
+        return Inv_No;
+    }
+
+    /**
+     * @return the JumlahGab
+     */
+    public javax.swing.JTextField getJumlahGab() {
+        return JumlahGab;
+    }
+
+    /**
+     * @return the JumlahPbr
+     */
+    public javax.swing.JTextField getJumlahPbr() {
+        return JumlahPbr;
+    }
+
+    /**
+     * @return the NoDM
+     */
+    public javax.swing.JTextField getNoDM() {
+        return NoDM;
+    }
+
+    /**
+     * @return the OngkosTxt
+     */
+    public javax.swing.JTextField getOngkosTxt() {
+        return OngkosTxt;
+    }
+
+    /**
+     * @return the Ongkosgab
+     */
+    public javax.swing.JTextField getOngkosgab() {
+        return Ongkosgab;
+    }
+
+    /**
+     * @return the PenerimaTxt
+     */
+    public javax.swing.JTextField getPenerimaTxt() {
+        return PenerimaTxt;
+    }
+
+    /**
+     * @return the PengirimTxt
+     */
+    public javax.swing.JTextField getPengirimTxt() {
+        return PengirimTxt;
+    }
+
+    /**
+     * @return the SanguTxt
+     */
+    public javax.swing.JTextField getSanguTxt() {
+        return SanguTxt;
+    }
+
+    /**
+     * @return the TanggalTxt
+     */
+    public javax.swing.JTextField getTanggalTxt() {
+        return TanggalTxt;
+    }
 }

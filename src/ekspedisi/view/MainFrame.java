@@ -55,12 +55,14 @@ public class MainFrame extends javax.swing.JFrame {
         OrderBtn = new javax.swing.JButton();
         PremiBtn = new javax.swing.JButton();
         LapRekBtn = new javax.swing.JButton();
+        BukuBesarBtn = new javax.swing.JButton();
         MainPanel = new javax.swing.JPanel();
         homePanel1 = new ekspedisi.panel.HomePanel();
         direktori1 = new ekspedisi.panel.Direktori();
         orderPanel1 = new ekspedisi.panel.OrderPanel();
         premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
         laporanRekening1 = new ekspedisi.panel.LaporanRekening();
+        bukuBesar1 = new ekspedisi.panel.BukuBesar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -149,6 +151,9 @@ public class MainFrame extends javax.swing.JFrame {
         LapRekBtn.setBackground(new java.awt.Color(255, 255, 255));
         LapRekBtn.setText("Laporan Rekening");
 
+        BukuBesarBtn.setBackground(new java.awt.Color(255, 255, 255));
+        BukuBesarBtn.setText("Buku Besar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -158,6 +163,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(OrderBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(PremiBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(LapRekBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+            .addComponent(BukuBesarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,6 +178,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(PremiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LapRekBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BukuBesarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -184,6 +192,7 @@ public class MainFrame extends javax.swing.JFrame {
         MainPanel.add(orderPanel1, "order");
         MainPanel.add(premiSupirPanel1, "premi");
         MainPanel.add(laporanRekening1, "laprek");
+        MainPanel.add(bukuBesar1, "bukubesar");
 
         javax.swing.GroupLayout BgPanelLayout = new javax.swing.GroupLayout(BgPanel);
         BgPanel.setLayout(BgPanelLayout);
@@ -207,7 +216,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                    .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 481, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -258,6 +267,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BgPanel;
+    private javax.swing.JButton BukuBesarBtn;
     private javax.swing.JButton DirektoriBtn;
     private javax.swing.JButton HomeBtn;
     private javax.swing.JButton LapRekBtn;
@@ -267,6 +277,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel TittlePanel;
     private javax.swing.JLabel TittleText1;
     private javax.swing.JLabel TittleText2;
+    private ekspedisi.panel.BukuBesar bukuBesar1;
     private ekspedisi.panel.Direktori direktori1;
     private ekspedisi.panel.HomePanel homePanel1;
     private javax.swing.JLabel jLabel1;
@@ -328,6 +339,10 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     /**
+     * @return the BukuBesarBtn
+     */
+    public javax.swing.JButton getBukuBesarBtn() {
+        return BukuBesarBtn;
      * @return the direktori1
      */
     public ekspedisi.panel.Direktori getDirektori1() {
