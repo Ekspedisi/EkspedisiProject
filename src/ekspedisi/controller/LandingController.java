@@ -74,6 +74,13 @@ public class LandingController {
                 controller.show("laprek");
             }
         });
+        MainFrame.getBukuBesarBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.show("bukubesar");
+            }
+        });
         
         
         
