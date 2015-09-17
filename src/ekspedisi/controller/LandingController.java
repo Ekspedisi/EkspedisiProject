@@ -48,6 +48,7 @@ public class LandingController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.show("direktori");
+//                MainFrame.getDirektori1().getController().RefreshTabel();
             }
         });
         

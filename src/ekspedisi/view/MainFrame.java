@@ -326,4 +326,11 @@ public class MainFrame extends javax.swing.JFrame {
     public ekspedisi.panel.HomePanel getHomePanel1() {
         return homePanel1;
     }
+
+    /**
+     * @return the direktori1
+     */
+    public ekspedisi.panel.Direktori getDirektori1() {
+        return direktori1;
+    }
 }
