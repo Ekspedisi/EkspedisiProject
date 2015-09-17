@@ -87,6 +87,7 @@ public class LandingController {
             Statement statement = Koneksi.conn.createStatement();
             String sql = "SELECT * FROM MASTER_KAB";
             statement.execute(sql);
+            
             ResultSet rs = statement.getResultSet();
             while ((rs!=null) && (rs.next())){
                 model.addRow(new Object[] {
@@ -103,6 +104,7 @@ public class LandingController {
         }
         catch(SQLException e){
             System.out.println(e.getMessage() +"z");
+            System.out.println("sql refresh");
         }
             
     }
