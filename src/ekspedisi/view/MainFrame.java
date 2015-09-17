@@ -64,6 +64,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         BgPanel.setBackground(new java.awt.Color(242, 242, 242));
 
@@ -212,6 +217,10 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        controller.refreshTable();
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -309,5 +318,12 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public javax.swing.JButton getPremiBtn() {
         return PremiBtn;
+    }
+
+    /**
+     * @return the homePanel1
+     */
+    public ekspedisi.panel.HomePanel getHomePanel1() {
+        return homePanel1;
     }
 }

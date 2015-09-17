@@ -5,11 +5,16 @@
  */
 package ekspedisi.controller;
 
+import ekspedisi.util.Koneksi;
 import ekspedisi.view.MainFrame;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -70,6 +75,36 @@ public class LandingController {
             }
         });
         
+        
+        
+    }
+    
+    public void refreshTable(){
+        try{
+            Koneksi.createConnection();
+            DefaultTableModel model = (DefaultTableModel) MainFrame.getHomePanel1().getTabel1().getModel();
+            model.setRowCount(0);
+            Statement statement = Koneksi.conn.createStatement();
+            String sql = "SELECT * FROM MASTER_KAB";
+            statement.execute(sql);
+            ResultSet rs = statement.getResultSet();
+            while ((rs!=null) && (rs.next())){
+                model.addRow(new Object[] {
+                    rs.getString(1) ,
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5)
+                });
+            }
+            rs.close();
+            statement.close();
+            Koneksi.closeConnection();
+        }
+        catch(SQLException e){
+            System.out.println(e.getMessage() +"z");
+        }
+            
     }
     
 }
