@@ -62,7 +62,7 @@ public class DirektoriController {
     public void RefreshTabel() {
         String sql="";
         if(getIndex()==0){
-            sql = "SELECT * FROM MASTER_KAB";
+            sql = "SELECT * FROM Supir";
         } 
         else if (getIndex()==1){
             sql = "SELECT * FROM TRUK";
@@ -98,7 +98,9 @@ public class DirektoriController {
                 model.addRow(new Object[]{
                     rs.getString(1),
                     rs.getString(2),
-                    rs.getString(3)
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5)
 //                        ,
 //                    rs.getString(4),
 //                    rs.getString(5)

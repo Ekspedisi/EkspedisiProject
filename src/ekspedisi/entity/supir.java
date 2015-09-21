@@ -10,12 +10,12 @@ package ekspedisi.entity;
  * @author bimasakti
  */
 public class supir {
-    private String nama;
-    private String alamat;
-    private String Norek;
-    private String Narek;
-    private Double premi;
-    private String Bank;
+    String nama;
+     String alamat;
+     String Norek;
+     String Narek;
+    Double premi;
+     String Bank;
     /**
      * 
      * @return the nama

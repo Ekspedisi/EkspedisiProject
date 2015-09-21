@@ -6,7 +6,6 @@
 package ekspedisi.controller;
 
 import ekspedisi.entity.supir;
-import ekspedisi.util.Koneksi;
 import ekspedisi.panel.AddSupir;
 import ekspedisi.util.Koneksi;
 import java.awt.event.ActionEvent;
@@ -39,13 +38,13 @@ public class AddSupirController {
             sup.setNarek(Asupir.getNarekSupirTxt().getText());
             sup.setBank(Asupir.getBankSupirTxt().getText());
         
-        try {
-            Koneksi.createConnection();
-            Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT TO Supir VALUES ('" + sup.getNama() + "','" + sup.getAlamat() + "','" + sup.getNorek() + "','" + sup.getNarek() + "','" + sup.getBank()+"')";
-            System.out.println(sql);
-            statement.execute(sql);
-            statement.close();
+            try {
+                Koneksi.createConnection();
+                Statement statement = Koneksi.conn.createStatement();
+                String sql = "INSERT TO Supir VALUES ('" + sup.getNama() + "','" + sup.getAlamat() + "','" + sup.getNorek() + "','" + sup.getNarek() + "','" + sup.getBank()+"')";
+                System.out.println(sql);
+                statement.execute(sql);
+            
                     
             } catch(SQLException a) {
             System.out.println(a.getMessage() + "z");
