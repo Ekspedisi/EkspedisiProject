@@ -50,13 +50,11 @@ public class Direktori extends javax.swing.JPanel {
         TabelDir = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
-        DialogSupir.setSize(new java.awt.Dimension(505, 285));
         DialogSupir.getContentPane().add(addSupir1, java.awt.BorderLayout.CENTER);
+        addSupir1.getAccessibleContext().setAccessibleName("AddSupir");
 
-        DialogTruk.setSize(new java.awt.Dimension(100, 100));
         DialogTruk.getContentPane().add(addTruk1, java.awt.BorderLayout.CENTER);
 
-        DialogPabrik.setSize(new java.awt.Dimension(100, 100));
         DialogPabrik.getContentPane().add(addPabrik1, java.awt.BorderLayout.CENTER);
 
         DialogGabungan.getContentPane().add(addGabungan1, java.awt.BorderLayout.CENTER);
@@ -142,7 +140,7 @@ public class Direktori extends javax.swing.JPanel {
                     .addComponent(AddBtn)
                     .addComponent(EditBtn)
                     .addComponent(DelBtn))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

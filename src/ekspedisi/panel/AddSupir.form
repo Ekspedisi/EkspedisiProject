@@ -72,11 +72,11 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="NamaSupir1" max="32767" attributes="0"/>
-                          <Component id="NorekSupir" alignment="0" max="32767" attributes="0"/>
-                          <Component id="AlamatSupir" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BankSupir" alignment="0" max="32767" attributes="0"/>
-                          <Component id="NarekSupir" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
+                          <Component id="NamaSupirTxt" max="32767" attributes="0"/>
+                          <Component id="NorekSupirTxt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AlamatSupirTxt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BankSupirTxt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="NarekSupirTxt" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -111,7 +111,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="namaAddSupir" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="NamaSupir1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NamaSupirTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -119,17 +119,17 @@
                               <Component id="jLabel3" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="AlamatSupir" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlamatSupirTxt" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="NorekSupir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NorekSupirTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BankSupir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BankSupirTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -137,7 +137,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="NarekSupir" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NarekSupirTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -217,29 +217,29 @@
         <Property name="text" type="java.lang.String" value=":"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="AlamatSupir">
+    <Component class="javax.swing.JTextField" name="AlamatSupirTxt">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlamatSupirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlamatSupirTxtActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NamaSupir1">
+    <Component class="javax.swing.JTextField" name="NamaSupirTxt">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NamaSupir1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NamaSupirTxtActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="BankSupir">
+    <Component class="javax.swing.JTextField" name="BankSupirTxt">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BankSupirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BankSupirTxtActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NorekSupir">
+    <Component class="javax.swing.JTextField" name="NorekSupirTxt">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NorekSupirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NorekSupirTxtActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NarekSupir">
+    <Component class="javax.swing.JTextField" name="NarekSupirTxt">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NarekSupirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NarekSupirTxtActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="inputSupir">

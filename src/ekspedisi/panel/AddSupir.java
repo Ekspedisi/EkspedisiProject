@@ -5,6 +5,9 @@
  */
 package ekspedisi.panel;
 
+import ekspedisi.entity.supir;
+import ekspedisi.util.Koneksi;
+
 /**
  *
  * @author bimasakti
@@ -17,7 +20,8 @@ public class AddSupir extends javax.swing.JPanel {
     public AddSupir() {
         initComponents();
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,11 +42,11 @@ public class AddSupir extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        AlamatSupir = new javax.swing.JTextField();
-        NamaSupir1 = new javax.swing.JTextField();
-        BankSupir = new javax.swing.JTextField();
-        NorekSupir = new javax.swing.JTextField();
-        NarekSupir = new javax.swing.JTextField();
+        AlamatSupirTxt = new javax.swing.JTextField();
+        NamaSupirTxt = new javax.swing.JTextField();
+        BankSupirTxt = new javax.swing.JTextField();
+        NorekSupirTxt = new javax.swing.JTextField();
+        NarekSupirTxt = new javax.swing.JTextField();
         inputSupir = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -73,33 +77,33 @@ public class AddSupir extends javax.swing.JPanel {
 
         jLabel10.setText(":");
 
-        AlamatSupir.addActionListener(new java.awt.event.ActionListener() {
+        AlamatSupirTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AlamatSupirActionPerformed(evt);
+                AlamatSupirTxtActionPerformed(evt);
             }
         });
 
-        NamaSupir1.addActionListener(new java.awt.event.ActionListener() {
+        NamaSupirTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamaSupir1ActionPerformed(evt);
+                NamaSupirTxtActionPerformed(evt);
             }
         });
 
-        BankSupir.addActionListener(new java.awt.event.ActionListener() {
+        BankSupirTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BankSupirActionPerformed(evt);
+                BankSupirTxtActionPerformed(evt);
             }
         });
 
-        NorekSupir.addActionListener(new java.awt.event.ActionListener() {
+        NorekSupirTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NorekSupirActionPerformed(evt);
+                NorekSupirTxtActionPerformed(evt);
             }
         });
 
-        NarekSupir.addActionListener(new java.awt.event.ActionListener() {
+        NarekSupirTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NarekSupirActionPerformed(evt);
+                NarekSupirTxtActionPerformed(evt);
             }
         });
 
@@ -186,11 +190,11 @@ public class AddSupir extends javax.swing.JPanel {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NamaSupir1)
-                            .addComponent(NorekSupir)
-                            .addComponent(AlamatSupir)
-                            .addComponent(BankSupir)
-                            .addComponent(NarekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(NamaSupirTxt)
+                            .addComponent(NorekSupirTxt)
+                            .addComponent(AlamatSupirTxt)
+                            .addComponent(BankSupirTxt)
+                            .addComponent(NarekSupirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(35, 35, 35))
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -218,28 +222,28 @@ public class AddSupir extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(namaAddSupir)
                             .addComponent(jLabel2)
-                            .addComponent(NamaSupir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NamaSupirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6))
-                            .addComponent(AlamatSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AlamatSupirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NorekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NorekSupirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BankSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BankSupirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel5))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(NarekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NarekSupirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -252,25 +256,25 @@ public class AddSupir extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AlamatSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlamatSupirActionPerformed
+    private void AlamatSupirTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlamatSupirTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AlamatSupirActionPerformed
+    }//GEN-LAST:event_AlamatSupirTxtActionPerformed
 
-    private void NamaSupir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaSupir1ActionPerformed
+    private void NamaSupirTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaSupirTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NamaSupir1ActionPerformed
+    }//GEN-LAST:event_NamaSupirTxtActionPerformed
 
-    private void BankSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankSupirActionPerformed
+    private void BankSupirTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankSupirTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BankSupirActionPerformed
+    }//GEN-LAST:event_BankSupirTxtActionPerformed
 
-    private void NorekSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorekSupirActionPerformed
+    private void NorekSupirTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorekSupirTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NorekSupirActionPerformed
+    }//GEN-LAST:event_NorekSupirTxtActionPerformed
 
-    private void NarekSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NarekSupirActionPerformed
+    private void NarekSupirTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NarekSupirTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NarekSupirActionPerformed
+    }//GEN-LAST:event_NarekSupirTxtActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -286,11 +290,11 @@ public class AddSupir extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AlamatSupir;
-    private javax.swing.JTextField BankSupir;
-    private javax.swing.JTextField NamaSupir1;
-    private javax.swing.JTextField NarekSupir;
-    private javax.swing.JTextField NorekSupir;
+    private javax.swing.JTextField AlamatSupirTxt;
+    private javax.swing.JTextField BankSupirTxt;
+    private javax.swing.JTextField NamaSupirTxt;
+    private javax.swing.JTextField NarekSupirTxt;
+    private javax.swing.JTextField NorekSupirTxt;
     private javax.swing.JButton cancelSupir;
     private javax.swing.JButton inputSupir;
     private javax.swing.JButton jButton1;
@@ -322,5 +326,40 @@ public class AddSupir extends javax.swing.JPanel {
      */
     public javax.swing.JButton getInputSupir() {
         return inputSupir;
+    }
+
+    /**
+     * @return the AlamatSupirTxt
+     */
+    public javax.swing.JTextField getAlamatSupirTxt() {
+        return AlamatSupirTxt;
+    }
+
+    /**
+     * @return the BankSupirTxt
+     */
+    public javax.swing.JTextField getBankSupirTxt() {
+        return BankSupirTxt;
+    }
+
+    /**
+     * @return the NamaSupirTxt
+     */
+    public javax.swing.JTextField getNamaSupirTxt() {
+        return NamaSupirTxt;
+    }
+
+    /**
+     * @return the NarekSupirTxt
+     */
+    public javax.swing.JTextField getNarekSupirTxt() {
+        return NarekSupirTxt;
+    }
+
+    /**
+     * @return the NorekSupirTxt
+     */
+    public javax.swing.JTextField getNorekSupirTxt() {
+        return NorekSupirTxt;
     }
 }

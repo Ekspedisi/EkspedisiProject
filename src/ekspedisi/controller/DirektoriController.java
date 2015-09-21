@@ -5,6 +5,7 @@
  */
 package ekspedisi.controller;
 
+
 import ekspedisi.panel.Direktori;
 import ekspedisi.util.Koneksi;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author M Arif Royanto
