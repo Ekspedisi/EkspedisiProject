@@ -50,7 +50,7 @@ public class Direktori extends javax.swing.JPanel {
         TabelDir = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
-        DialogSupir.getContentPane().add(addSupir1, java.awt.BorderLayout.CENTER);
+        DialogSupir.getContentPane().add(addSupir1, java.awt.BorderLayout.LINE_END);
         addSupir1.getAccessibleContext().setAccessibleName("AddSupir");
 
         DialogTruk.getContentPane().add(addTruk1, java.awt.BorderLayout.CENTER);
