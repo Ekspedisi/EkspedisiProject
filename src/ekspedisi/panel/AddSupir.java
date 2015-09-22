@@ -362,4 +362,39 @@ public class AddSupir extends javax.swing.JPanel {
     public javax.swing.JTextField getNorekSupirTxt() {
         return NorekSupirTxt;
     }
+
+    /**
+     * @param AlamatSupirTxt the AlamatSupirTxt to set
+     */
+    public void setAlamatSupirTxt(javax.swing.JTextField AlamatSupirTxt) {
+        this.AlamatSupirTxt = AlamatSupirTxt;
+    }
+
+    /**
+     * @param BankSupirTxt the BankSupirTxt to set
+     */
+    public void setBankSupirTxt(javax.swing.JTextField BankSupirTxt) {
+        this.BankSupirTxt = BankSupirTxt;
+    }
+
+    /**
+     * @param NamaSupirTxt the NamaSupirTxt to set
+     */
+    public void setNamaSupirTxt(javax.swing.JTextField NamaSupirTxt) {
+        this.NamaSupirTxt = NamaSupirTxt;
+    }
+
+    /**
+     * @param NarekSupirTxt the NarekSupirTxt to set
+     */
+    public void setNarekSupirTxt(javax.swing.JTextField NarekSupirTxt) {
+        this.NarekSupirTxt = NarekSupirTxt;
+    }
+
+    /**
+     * @param NorekSupirTxt the NorekSupirTxt to set
+     */
+    public void setNorekSupirTxt(javax.swing.JTextField NorekSupirTxt) {
+        this.NorekSupirTxt = NorekSupirTxt;
+    }
 }

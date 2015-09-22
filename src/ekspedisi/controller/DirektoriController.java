@@ -7,6 +7,7 @@ package ekspedisi.controller;
 
 
 import ekspedisi.panel.Direktori;
+import ekspedisi.entity.supir;
 import ekspedisi.util.Koneksi;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,14 +39,38 @@ public class DirektoriController {
             }
         });
 
-        dir.getAddSupir1().getInputSupir().addActionListener(new ActionListener() {
+       dir.getAddSupir1().getInputSupir().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                dir.getDialogSupir().setVisible(false);
-            }
+                try {
+                    // set isi dari entity supir
+                    supir sup = new supir();
+                    sup.setNama(dir.getAddSupir1().getNamaSupirTxt().getText());
+                    sup.setAlamat(dir.getAddSupir1().getAlamatSupirTxt().getText());
+                    sup.setNorek(dir.getAddSupir1().getNorekSupirTxt().getText());
+                    sup.setNarek(dir.getAddSupir1().getNarekSupirTxt().getText());
+                    sup.setBank(dir.getAddSupir1().getBankSupirTxt().getText());
+                    //input database
+                    Koneksi.createConnection();
+                    Statement statement = Koneksi.conn.createStatement();
+                    String sql = "INSERT into Supir VALUES(1,'" + sup.getNama()+"','"+ sup.getAlamat()+"','"+ sup.getNorek()+"','" + sup.getNarek()+"','"+ sup.getBank()+"')";
+                    System.out.print(sql);
+                    statement.execute(sql);
+                    //refresh textfield
+                    dir.getAddSupir1().getNamaSupirTxt().setText(" ");
+                    dir.getAddSupir1().getAlamatSupirTxt().setText(" ");
+                    dir.getAddSupir1().getNorekSupirTxt().setText(" ");
+                    dir.getAddSupir1().getNarekSupirTxt().setText(" ");
+                    dir.getAddSupir1().getBankSupirTxt().setText(" ");
+                    
+                } catch (SQLException f) {
+            System.out.println(f.getMessage() + "z");
+            System.out.println("sql refresh");
+                             
+            }}
         });
-
+       
         dir.getAddSupir1().getCancelSupir().addActionListener(new ActionListener() {
 
             @Override
@@ -178,3 +203,4 @@ public class DirektoriController {
     }
 
 }
+
