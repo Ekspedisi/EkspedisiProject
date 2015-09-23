@@ -33,9 +33,8 @@ public class DirektoriController {
         dir.getAddBtn().addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                dir.getDialogSupir().setVisible(true);
-                dir.getDialogSupir().setLocationRelativeTo(null);
+            public void actionPerformed(ActionEvent e) {                
+                showDialog();
             }
         });
 
@@ -233,6 +232,22 @@ public class DirektoriController {
             
         }
         
+    }
+    
+    public void showDialog(){
+        if(getIndex()==0){
+            dir.getDialogSupir().setVisible(true);
+        } 
+        else if (getIndex()==1){
+            dir.getDialogTruk().setVisible(true);
+        }
+        else if (getIndex()==2){
+            dir.getDialogPabrik().setVisible(true);
+
+        }
+        else if (getIndex()==3){
+            dir.getDialogGabungan().setVisible(true);
+        }
     }
 
 }

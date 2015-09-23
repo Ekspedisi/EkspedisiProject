@@ -50,6 +50,7 @@ public class Direktori extends javax.swing.JPanel {
         TabelDir = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
+        addSupir1.setMaximumSize(new java.awt.Dimension(505, 285));
         DialogSupir.getContentPane().add(addSupir1, java.awt.BorderLayout.LINE_END);
         addSupir1.getAccessibleContext().setAccessibleName("AddSupir");
 
