@@ -7,6 +7,7 @@ package ekspedisi.panel;
 
 import ekspedisi.entity.supir;
 import ekspedisi.util.Koneksi;
+import java.awt.Dimension;
 
 /**
  *
@@ -19,6 +20,7 @@ public class AddSupir extends javax.swing.JPanel {
      */
     public AddSupir() {
         initComponents();
+        setSize(new Dimension(505, 285));
     }
     
     

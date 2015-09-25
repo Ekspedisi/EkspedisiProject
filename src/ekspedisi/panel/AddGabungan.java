@@ -5,6 +5,8 @@
  */
 package ekspedisi.panel;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author bimasakti
@@ -16,6 +18,7 @@ public class AddGabungan extends javax.swing.JPanel {
      */
     public AddGabungan() {
         initComponents();
+        setSize(new Dimension(505, 285));
     }
 
     /**

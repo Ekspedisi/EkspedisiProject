@@ -5,6 +5,8 @@
  */
 package ekspedisi.panel;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author bimasakti
@@ -16,6 +18,7 @@ public class AddPabrik extends javax.swing.JPanel {
      */
     public AddPabrik() {
         initComponents();
+        setSize(new Dimension(505, 285));
     }
 
     /**

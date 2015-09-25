@@ -14,6 +14,13 @@ import ekspedisi.controller.LandingController;
 public class MainFrame extends javax.swing.JFrame {
 
     private static MainFrame instance;
+
+    /**
+     * @return the instance
+     */
+    public static MainFrame getInstance() {
+        return instance;
+    }
     /**
      * Creates new form MainFrame
      */
@@ -22,14 +29,14 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        controller = new LandingController(MainPanel, this);
+        controller = new LandingController(mainPanel, this);
     }
     
     public static MainFrame getInstace(){
-        if (instance == null) {
+        if (getInstance() == null) {
             instance = new MainFrame();
         }
-        return instance;
+        return getInstance();
         
     }
 
@@ -56,13 +63,7 @@ public class MainFrame extends javax.swing.JFrame {
         PremiBtn = new javax.swing.JButton();
         LapRekBtn = new javax.swing.JButton();
         BukuBesarBtn = new javax.swing.JButton();
-        MainPanel = new javax.swing.JPanel();
-        homePanel1 = new ekspedisi.panel.HomePanel();
-        direktori1 = new ekspedisi.panel.Direktori();
-        orderPanel1 = new ekspedisi.panel.OrderPanel();
-        premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
-        laporanRekening1 = new ekspedisi.panel.LaporanRekening();
-        bukuBesar1 = new ekspedisi.panel.BukuBesar();
+        mainPanel = new ekspedisi.panel.MainPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -100,7 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(TittleText2)
                     .addComponent(jLabel1)
                     .addComponent(TittleText1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         TittlePanelLayout.setVerticalGroup(
             TittlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,19 +181,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(LapRekBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BukuBesarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
-
-        MainPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        MainPanel.setPreferredSize(new java.awt.Dimension(600, 450));
-        MainPanel.setRequestFocusEnabled(false);
-        MainPanel.setLayout(new java.awt.CardLayout());
-        MainPanel.add(homePanel1, "home");
-        MainPanel.add(direktori1, "direktori");
-        MainPanel.add(orderPanel1, "order");
-        MainPanel.add(premiSupirPanel1, "premi");
-        MainPanel.add(laporanRekening1, "laprek");
-        MainPanel.add(bukuBesar1, "bukubesar");
 
         javax.swing.GroupLayout BgPanelLayout = new javax.swing.GroupLayout(BgPanel);
         BgPanel.setLayout(BgPanelLayout);
@@ -203,8 +193,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BgPanelLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -215,13 +205,13 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 481, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
         );
 
-        getContentPane().add(BgPanel, java.awt.BorderLayout.CENTER);
+        getContentPane().add(BgPanel, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -271,23 +261,24 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton DirektoriBtn;
     private javax.swing.JButton HomeBtn;
     private javax.swing.JButton LapRekBtn;
-    private javax.swing.JPanel MainPanel;
     private javax.swing.JButton OrderBtn;
     private javax.swing.JButton PremiBtn;
     private javax.swing.JPanel TittlePanel;
     private javax.swing.JLabel TittleText1;
     private javax.swing.JLabel TittleText2;
-    private ekspedisi.panel.BukuBesar bukuBesar1;
-    private ekspedisi.panel.Direktori direktori1;
-    private ekspedisi.panel.HomePanel homePanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private ekspedisi.panel.LaporanRekening laporanRekening1;
-    private ekspedisi.panel.OrderPanel orderPanel1;
-    private ekspedisi.panel.PremiSupirPanel premiSupirPanel1;
+    private ekspedisi.panel.MainPanel mainPanel;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the BukuBesarBtn
+     */
+    public javax.swing.JButton getBukuBesarBtn() {
+        return BukuBesarBtn;
+    }
 
     /**
      * @return the DirektoriBtn
@@ -311,13 +302,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     /**
-     * @return the MainPanel
-     */
-    public javax.swing.JPanel getMainPanel() {
-        return MainPanel;
-    }
-
-    /**
      * @return the OrderBtn
      */
     public javax.swing.JButton getOrderBtn() {
@@ -331,21 +315,4 @@ public class MainFrame extends javax.swing.JFrame {
         return PremiBtn;
     }
 
-    /**
-     * @return the homePanel1
-     */
-    public ekspedisi.panel.HomePanel getHomePanel1() {
-        return homePanel1;
-    }
-
-    /**
-     * @return the BukuBesarBtn
-     */
-    public javax.swing.JButton getBukuBesarBtn() {
-        return BukuBesarBtn;
-    }
-     
-    public ekspedisi.panel.Direktori getDirektori1() {
-        return direktori1;
-    }
 }

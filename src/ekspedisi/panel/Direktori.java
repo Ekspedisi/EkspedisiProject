@@ -19,7 +19,11 @@ public class Direktori extends javax.swing.JPanel {
     private DirektoriController controller;
     public Direktori() {
         initComponents();
+        controller = new DirektoriController(this);
         
+    }
+    
+    public void Initialize(){
         controller = new DirektoriController(this);
     }
 
@@ -50,6 +54,9 @@ public class Direktori extends javax.swing.JPanel {
         TabelDir = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
+        DialogSupir.setModal(true);
+        DialogSupir.setType(java.awt.Window.Type.POPUP);
+
         addSupir1.setMaximumSize(new java.awt.Dimension(505, 285));
         DialogSupir.getContentPane().add(addSupir1, java.awt.BorderLayout.LINE_END);
         addSupir1.getAccessibleContext().setAccessibleName("AddSupir");
@@ -67,11 +74,6 @@ public class Direktori extends javax.swing.JPanel {
         EditBtn.setText("Edit");
 
         DelBtn.setText("Delete");
-        DelBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DelBtnActionPerformed(evt);
-            }
-        });
 
         DirCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supir", "Truk", "Pabrik", "PT. Gabungan" }));
 
@@ -144,10 +146,6 @@ public class Direktori extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void DelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DelBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

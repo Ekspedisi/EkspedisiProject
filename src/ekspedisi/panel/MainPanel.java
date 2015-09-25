@@ -27,19 +27,72 @@ public class MainPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        homePanel1 = new ekspedisi.panel.HomePanel();
+        direktori1 = new ekspedisi.panel.Direktori();
+        bukuBesar1 = new ekspedisi.panel.BukuBesar();
+        orderPanel1 = new ekspedisi.panel.OrderPanel();
+        laporanRekening1 = new ekspedisi.panel.LaporanRekening();
+        premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
+
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setLayout(new java.awt.CardLayout());
+        add(homePanel1, "home");
+        add(direktori1, "direktori");
+        add(bukuBesar1, "bukubesar");
+        add(orderPanel1, "order");
+        add(laporanRekening1, "rekening");
+        add(premiSupirPanel1, "premi");
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ekspedisi.panel.BukuBesar bukuBesar1;
+    private ekspedisi.panel.Direktori direktori1;
+    private ekspedisi.panel.HomePanel homePanel1;
+    private ekspedisi.panel.LaporanRekening laporanRekening1;
+    private ekspedisi.panel.OrderPanel orderPanel1;
+    private ekspedisi.panel.PremiSupirPanel premiSupirPanel1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the bukuBesar1
+     */
+    public ekspedisi.panel.BukuBesar getBukuBesar1() {
+        return bukuBesar1;
+    }
+
+    /**
+     * @return the direktori1
+     */
+    public ekspedisi.panel.Direktori getDirektori1() {
+        return direktori1;
+    }
+
+    /**
+     * @return the homePanel1
+     */
+    public ekspedisi.panel.HomePanel getHomePanel1() {
+        return homePanel1;
+    }
+
+    /**
+     * @return the laporanRekening1
+     */
+    public ekspedisi.panel.LaporanRekening getLaporanRekening1() {
+        return laporanRekening1;
+    }
+
+    /**
+     * @return the orderPanel1
+     */
+    public ekspedisi.panel.OrderPanel getOrderPanel1() {
+        return orderPanel1;
+    }
+
+    /**
+     * @return the premiSupirPanel1
+     */
+    public ekspedisi.panel.PremiSupirPanel getPremiSupirPanel1() {
+        return premiSupirPanel1;
+    }
 }

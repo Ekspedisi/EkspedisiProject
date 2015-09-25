@@ -31,7 +31,7 @@ public class DirektoriController {
         this.dir = dir;
         dir.getDirCombo().setSelectedIndex(0);
         ChangeTableModel(getIndex());
-        RefreshTabel();
+        //RefreshTabel();
 
         dir.getAddBtn().addActionListener(new ActionListener() {
 
@@ -319,14 +319,24 @@ public class DirektoriController {
 
     public void showDialog() {
         if (getIndex() == 0) {
+            dir.getDialogSupir().pack();
+            dir.getDialogSupir().setLocationRelativeTo(null);
             dir.getDialogSupir().setVisible(true);
+            
         } else if (getIndex() == 1) {
+            dir.getDialogTruk().pack();
             dir.getDialogTruk().setVisible(true);
+            dir.getDialogTruk().setLocationRelativeTo(null);
         } else if (getIndex() == 2) {
+            dir.getDialogPabrik().pack();  
+            dir.getDialogPabrik().setLocationRelativeTo(null);
             dir.getDialogPabrik().setVisible(true);
-
+          
         } else if (getIndex() == 3) {
+            dir.getDialogGabungan().pack();
+            dir.getDialogGabungan().setLocationRelativeTo(null);
             dir.getDialogGabungan().setVisible(true);
+            
         }
     }
 

@@ -5,6 +5,7 @@
  */
 package ekspedisi.controller;
 
+import ekspedisi.panel.MainPanel;
 import ekspedisi.util.Koneksi;
 import ekspedisi.view.MainFrame;
 import java.awt.CardLayout;
@@ -23,10 +24,10 @@ import javax.swing.table.DefaultTableModel;
 public class LandingController {
     
     CardLayoutController controller;
-    JPanel MainPanel;
+    MainPanel MainPanel;
     MainFrame MainFrame;
     
-    public LandingController(JPanel MainPanel, MainFrame MainFrame){
+    public LandingController(MainPanel MainPanel, MainFrame MainFrame){
         this.MainPanel = MainPanel;
         this.MainFrame = MainFrame;
         
@@ -50,7 +51,7 @@ public class LandingController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.show("direktori");
-//                MainFrame.getDirektori1().getController().RefreshTabel();
+                MainPanel.getDirektori1().getController().RefreshTabel();
             }
         });
         
@@ -74,7 +75,7 @@ public class LandingController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.show("laprek");
+                controller.show("rekening");
             }
         });
         MainFrame.getBukuBesarBtn().addActionListener(new ActionListener() {
@@ -90,7 +91,7 @@ public class LandingController {
     public void refreshTable(){
         try{
             Koneksi.createConnection();
-            DefaultTableModel model = (DefaultTableModel) MainFrame.getHomePanel1().getTabel1().getModel();
+            DefaultTableModel model = (DefaultTableModel) MainPanel.getHomePanel1().getTabel1().getModel();
             model.setRowCount(0);
             Statement statement = Koneksi.conn.createStatement();
             String sql = "SELECT * FROM MASTER_KAB";
