@@ -34,6 +34,8 @@ public class LandingController {
         controller.setCardLayout((CardLayout) MainPanel.getLayout());
         controller.setParentCard(MainPanel);
         
+        refreshTable();
+        
         
         MainFrame.getHomeBtn().addActionListener(new ActionListener() {
 
@@ -82,8 +84,6 @@ public class LandingController {
                 controller.show("bukubesar");
             }
         });
-        
-        
         
     }
     

@@ -38,13 +38,13 @@ public class AddGabungan extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        AlamatSupir = new javax.swing.JTextField();
-        NamaSupir1 = new javax.swing.JTextField();
-        BankSupir = new javax.swing.JTextField();
-        NorekSupir = new javax.swing.JTextField();
-        NarekSupir = new javax.swing.JTextField();
-        inputSupir = new javax.swing.JButton();
-        cancelSupir = new javax.swing.JButton();
+        AlamatGabTxt = new javax.swing.JTextField();
+        NamaGabTxt = new javax.swing.JTextField();
+        BankgabTxt = new javax.swing.JTextField();
+        NorekGabTxt = new javax.swing.JTextField();
+        NarekgabTxt = new javax.swing.JTextField();
+        saveBtn = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Tambah Data PT Gabungan");
@@ -69,44 +69,44 @@ public class AddGabungan extends javax.swing.JPanel {
 
         jLabel10.setText(":");
 
-        AlamatSupir.addActionListener(new java.awt.event.ActionListener() {
+        AlamatGabTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AlamatSupirActionPerformed(evt);
+                AlamatGabTxtActionPerformed(evt);
             }
         });
 
-        NamaSupir1.addActionListener(new java.awt.event.ActionListener() {
+        NamaGabTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamaSupir1ActionPerformed(evt);
+                NamaGabTxtActionPerformed(evt);
             }
         });
 
-        BankSupir.addActionListener(new java.awt.event.ActionListener() {
+        BankgabTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BankSupirActionPerformed(evt);
+                BankgabTxtActionPerformed(evt);
             }
         });
 
-        NorekSupir.addActionListener(new java.awt.event.ActionListener() {
+        NorekGabTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NorekSupirActionPerformed(evt);
+                NorekGabTxtActionPerformed(evt);
             }
         });
 
-        NarekSupir.addActionListener(new java.awt.event.ActionListener() {
+        NarekgabTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NarekSupirActionPerformed(evt);
+                NarekgabTxtActionPerformed(evt);
             }
         });
 
-        inputSupir.setText("input");
-        inputSupir.addActionListener(new java.awt.event.ActionListener() {
+        saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSupirActionPerformed(evt);
+                saveBtnActionPerformed(evt);
             }
         });
 
-        cancelSupir.setText("cancel");
+        cancelBtn.setText("cancel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,9 +123,9 @@ public class AddGabungan extends javax.swing.JPanel {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cancelSupir)
+                                    .addComponent(cancelBtn)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(inputSupir))
+                                    .addComponent(saveBtn))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
@@ -143,11 +143,11 @@ public class AddGabungan extends javax.swing.JPanel {
                                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(BankSupir, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(NarekSupir, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(NamaSupir1)
-                                        .addComponent(AlamatSupir)
-                                        .addComponent(NorekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(BankgabTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(NarekgabTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(NamaGabTxt)
+                                        .addComponent(AlamatGabTxt)
+                                        .addComponent(NorekGabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -159,73 +159,72 @@ public class AddGabungan extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(namaAddSupir)
                     .addComponent(jLabel2)
-                    .addComponent(NamaSupir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NamaGabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6))
-                    .addComponent(AlamatSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AlamatGabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NorekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NorekGabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BankSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BankgabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel5))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NarekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NarekgabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel8)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputSupir)
-                    .addComponent(cancelSupir))
+                    .addComponent(saveBtn)
+                    .addComponent(cancelBtn))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AlamatSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlamatSupirActionPerformed
+    private void AlamatGabTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlamatGabTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AlamatSupirActionPerformed
+    }//GEN-LAST:event_AlamatGabTxtActionPerformed
 
-    private void NamaSupir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaSupir1ActionPerformed
+    private void NamaGabTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaGabTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NamaSupir1ActionPerformed
+    }//GEN-LAST:event_NamaGabTxtActionPerformed
 
-    private void BankSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankSupirActionPerformed
+    private void BankgabTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankgabTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BankSupirActionPerformed
+    }//GEN-LAST:event_BankgabTxtActionPerformed
 
-    private void NorekSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorekSupirActionPerformed
+    private void NorekGabTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorekGabTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NorekSupirActionPerformed
+    }//GEN-LAST:event_NorekGabTxtActionPerformed
 
-    private void NarekSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NarekSupirActionPerformed
+    private void NarekgabTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NarekgabTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NarekSupirActionPerformed
+    }//GEN-LAST:event_NarekgabTxtActionPerformed
 
-    private void inputSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSupirActionPerformed
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputSupirActionPerformed
+    }//GEN-LAST:event_saveBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AlamatSupir;
-    private javax.swing.JTextField BankSupir;
-    private javax.swing.JTextField NamaSupir1;
-    private javax.swing.JTextField NarekSupir;
-    private javax.swing.JTextField NorekSupir;
-    private javax.swing.JButton cancelSupir;
-    private javax.swing.JButton inputSupir;
+    private javax.swing.JTextField AlamatGabTxt;
+    private javax.swing.JTextField BankgabTxt;
+    private javax.swing.JTextField NamaGabTxt;
+    private javax.swing.JTextField NarekgabTxt;
+    private javax.swing.JTextField NorekGabTxt;
+    private javax.swing.JButton cancelBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -237,5 +236,90 @@ public class AddGabungan extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel namaAddSupir;
+    private javax.swing.JButton saveBtn;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the AlamatGabTxt
+     */
+    public javax.swing.JTextField getAlamatGabTxt() {
+        return AlamatGabTxt;
+    }
+
+    /**
+     * @param AlamatGabTxt the AlamatGabTxt to set
+     */
+    public void setAlamatGabTxt(javax.swing.JTextField AlamatGabTxt) {
+        this.AlamatGabTxt = AlamatGabTxt;
+    }
+
+    /**
+     * @return the BankgabTxt
+     */
+    public javax.swing.JTextField getBankgabTxt() {
+        return BankgabTxt;
+    }
+
+    /**
+     * @param BankgabTxt the BankgabTxt to set
+     */
+    public void setBankgabTxt(javax.swing.JTextField BankgabTxt) {
+        this.BankgabTxt = BankgabTxt;
+    }
+
+    /**
+     * @return the NamaGabTxt
+     */
+    public javax.swing.JTextField getNamaGabTxt() {
+        return NamaGabTxt;
+    }
+
+    /**
+     * @param NamaGabTxt the NamaGabTxt to set
+     */
+    public void setNamaGabTxt(javax.swing.JTextField NamaGabTxt) {
+        this.NamaGabTxt = NamaGabTxt;
+    }
+
+    /**
+     * @return the NarekgabTxt
+     */
+    public javax.swing.JTextField getNarekgabTxt() {
+        return NarekgabTxt;
+    }
+
+    /**
+     * @param NarekgabTxt the NarekgabTxt to set
+     */
+    public void setNarekgabTxt(javax.swing.JTextField NarekgabTxt) {
+        this.NarekgabTxt = NarekgabTxt;
+    }
+
+    /**
+     * @return the NorekGabTxt
+     */
+    public javax.swing.JTextField getNorekGabTxt() {
+        return NorekGabTxt;
+    }
+
+    /**
+     * @param NorekGabTxt the NorekGabTxt to set
+     */
+    public void setNorekGabTxt(javax.swing.JTextField NorekGabTxt) {
+        this.NorekGabTxt = NorekGabTxt;
+    }
+
+    /**
+     * @return the cancelBtn
+     */
+    public javax.swing.JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    /**
+     * @return the saveBtn
+     */
+    public javax.swing.JButton getSaveBtn() {
+        return saveBtn;
+    }
 }

@@ -10,14 +10,16 @@ package ekspedisi.entity;
  * @author bimasakti
  */
 public class supir {
+
     String nama;
-     String alamat;
-     String Norek;
-     String Narek;
+    String alamat;
+    String Norek;
+    String Narek;
     Double premi;
-     String Bank;
+    String Bank;
+
     /**
-     * 
+     *
      * @return the nama
      */
     public String getNama() {
@@ -100,7 +102,5 @@ public class supir {
     public void setBank(String Bank) {
         this.Bank = Bank;
     }
-    
-    
-    
+
 }

@@ -84,6 +84,11 @@ public class AddPremiSupir extends javax.swing.JPanel {
         jLabel7.setText("Total        :  Rp. -");
 
         okPremi.setText("OK");
+        okPremi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okPremiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -164,11 +169,15 @@ public class AddPremiSupir extends javax.swing.JPanel {
                         .addComponent(jLabel7)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(okPremi)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void okPremiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okPremiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_okPremiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -107,7 +107,7 @@ public class AddSupir extends javax.swing.JPanel {
             }
         });
 
-        inputSupir.setText("input");
+        inputSupir.setText("save");
         inputSupir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputSupirActionPerformed(evt);

@@ -34,11 +34,11 @@ public class AddTruk extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        AlamatSupir = new javax.swing.JTextField();
-        NamaSupir1 = new javax.swing.JTextField();
-        NorekSupir = new javax.swing.JTextField();
-        inputSupir = new javax.swing.JButton();
-        inputSupir1 = new javax.swing.JButton();
+        NoPolTxt = new javax.swing.JTextField();
+        MrekTrukTxt = new javax.swing.JTextField();
+        MuatanTxt = new javax.swing.JTextField();
+        saveBtn = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Tambah Data Truk");
@@ -55,35 +55,35 @@ public class AddTruk extends javax.swing.JPanel {
 
         jLabel7.setText(":");
 
-        AlamatSupir.addActionListener(new java.awt.event.ActionListener() {
+        NoPolTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AlamatSupirActionPerformed(evt);
+                NoPolTxtActionPerformed(evt);
             }
         });
 
-        NamaSupir1.addActionListener(new java.awt.event.ActionListener() {
+        MrekTrukTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamaSupir1ActionPerformed(evt);
+                MrekTrukTxtActionPerformed(evt);
             }
         });
 
-        NorekSupir.addActionListener(new java.awt.event.ActionListener() {
+        MuatanTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NorekSupirActionPerformed(evt);
+                MuatanTxtActionPerformed(evt);
             }
         });
 
-        inputSupir.setText("input");
-        inputSupir.addActionListener(new java.awt.event.ActionListener() {
+        saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSupirActionPerformed(evt);
+                saveBtnActionPerformed(evt);
             }
         });
 
-        inputSupir1.setText("cancel");
-        inputSupir1.addActionListener(new java.awt.event.ActionListener() {
+        cancelBtn.setText("cancel");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSupir1ActionPerformed(evt);
+                cancelBtnActionPerformed(evt);
             }
         });
 
@@ -94,93 +94,89 @@ public class AddTruk extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(namaAddSupir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addContainerGap(326, Short.MAX_VALUE)
+                        .addComponent(cancelBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(saveBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(namaAddSupir)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4))
+                                    .addGap(42, 42, 42)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AlamatSupir)
-                            .addComponent(NamaSupir1)
-                            .addComponent(NorekSupir)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(31, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputSupir1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(inputSupir))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(297, 297, 297)))))
+                            .addComponent(NoPolTxt)
+                            .addComponent(MrekTrukTxt)
+                            .addComponent(MuatanTxt))))
                 .addGap(49, 49, 49))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(namaAddSupir)
                     .addComponent(jLabel2)
-                    .addComponent(NamaSupir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MrekTrukTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6))
-                    .addComponent(AlamatSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NoPolTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NorekSupir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MuatanTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel7))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputSupir)
-                    .addComponent(inputSupir1))
+                    .addComponent(saveBtn)
+                    .addComponent(cancelBtn))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AlamatSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlamatSupirActionPerformed
+    private void NoPolTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoPolTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AlamatSupirActionPerformed
+    }//GEN-LAST:event_NoPolTxtActionPerformed
 
-    private void NamaSupir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaSupir1ActionPerformed
+    private void MrekTrukTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MrekTrukTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NamaSupir1ActionPerformed
+    }//GEN-LAST:event_MrekTrukTxtActionPerformed
 
-    private void NorekSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorekSupirActionPerformed
+    private void MuatanTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MuatanTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NorekSupirActionPerformed
+    }//GEN-LAST:event_MuatanTxtActionPerformed
 
-    private void inputSupirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSupirActionPerformed
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputSupirActionPerformed
+    }//GEN-LAST:event_saveBtnActionPerformed
 
-    private void inputSupir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSupir1ActionPerformed
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputSupir1ActionPerformed
+    }//GEN-LAST:event_cancelBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AlamatSupir;
-    private javax.swing.JTextField NamaSupir1;
-    private javax.swing.JTextField NorekSupir;
-    private javax.swing.JButton inputSupir;
-    private javax.swing.JButton inputSupir1;
+    private javax.swing.JTextField MrekTrukTxt;
+    private javax.swing.JTextField MuatanTxt;
+    private javax.swing.JTextField NoPolTxt;
+    private javax.swing.JButton cancelBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -188,5 +184,62 @@ public class AddTruk extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel namaAddSupir;
+    private javax.swing.JButton saveBtn;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the MrekTrukTxt
+     */
+    public javax.swing.JTextField getMrekTrukTxt() {
+        return MrekTrukTxt;
+    }
+
+    /**
+     * @param MrekTrukTxt the MrekTrukTxt to set
+     */
+    public void setMrekTrukTxt(javax.swing.JTextField MrekTrukTxt) {
+        this.MrekTrukTxt = MrekTrukTxt;
+    }
+
+    /**
+     * @return the MuatanTxt
+     */
+    public javax.swing.JTextField getMuatanTxt() {
+        return MuatanTxt;
+    }
+
+    /**
+     * @param MuatanTxt the MuatanTxt to set
+     */
+    public void setMuatanTxt(javax.swing.JTextField MuatanTxt) {
+        this.MuatanTxt = MuatanTxt;
+    }
+
+    /**
+     * @return the NoPolTxt
+     */
+    public javax.swing.JTextField getNoPolTxt() {
+        return NoPolTxt;
+    }
+
+    /**
+     * @param NoPolTxt the NoPolTxt to set
+     */
+    public void setNoPolTxt(javax.swing.JTextField NoPolTxt) {
+        this.NoPolTxt = NoPolTxt;
+    }
+
+    /**
+     * @return the cancelBtn
+     */
+    public javax.swing.JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    /**
+     * @return the saveBtn
+     */
+    public javax.swing.JButton getSaveBtn() {
+        return saveBtn;
+    }
 }
