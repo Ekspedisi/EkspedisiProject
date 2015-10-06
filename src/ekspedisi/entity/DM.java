@@ -14,7 +14,7 @@ public class DM {
     private String gabungan;
     private String nopol;
     private String supir;
-    private int sangu;
+    private String sangu;
     private String pengirim;
     private String kota;
     private String penerima;
@@ -87,14 +87,14 @@ public class DM {
     /**
      * @return the sangu
      */
-    public int getSangu() {
+    public String getSangu() {
         return sangu;
     }
 
     /**
      * @param sangu the sangu to set
      */
-    public void setSangu(int sangu) {
+    public void setSangu(String sangu) {
         this.sangu = sangu;
     }
 
