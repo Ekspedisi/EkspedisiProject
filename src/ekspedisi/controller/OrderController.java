@@ -46,7 +46,7 @@ public class OrderController {
 
             @Override
             public void keyTyped(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
@@ -58,7 +58,7 @@ public class OrderController {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         
@@ -66,7 +66,7 @@ public class OrderController {
 
             @Override
             public void keyTyped(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
@@ -79,7 +79,7 @@ public class OrderController {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         
@@ -87,7 +87,7 @@ public class OrderController {
 
             @Override
             public void keyTyped(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
@@ -101,7 +101,7 @@ public class OrderController {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         
@@ -109,29 +109,64 @@ public class OrderController {
 
             @Override
             public void keyTyped(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
+                int b = Integer.parseInt(ord.getBeratTxt().getText());
+                int a = Integer.parseInt(ord.getOngkosTxt().getText());
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
-                    ord.getJumlahPbr().requestFocus();
-                    ord.getJumlahPbr().setText(Integer.toString(jumlahp(Integer.parseInt(ord.getBeratTxt().getText()), Integer.parseInt(ord.getOngkosTxt().getText()))));
+                    ord.getOngkosgab().requestFocus();
+                    ord.getJumlahPbr().setText(String.valueOf(jumlahp(a, b)));
+                    ord.getBeratTxt1().setText(ord.getBeratTxt().getText());
                     
                 }
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
+        
                 
         ord.getBoronganCb().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                //ord.getJumlahPbr().setText(Integer.toString(jumlahpabrik));
+                int b = Integer.parseInt(ord.getBeratTxt().getText());
+                int a = Integer.parseInt(ord.getOngkosTxt().getText());
+                
+                if(ord.getBoronganCb().isSelected()){
+                    ord.getJumlahPbr().setText("1000000 ");
+                }
+                else{
+                    ord.getJumlahPbr().setText(String.valueOf(jumlahp(a, b))); 
+                }
+            }
+        });
+        
+        ord.getOngkosgab().addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                int b = Integer.parseInt(ord.getBeratTxt1().getText());
+                int a = Integer.parseInt(ord.getOngkosgab().getText());
+                if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    ord.getAddOrder().requestFocus();
+                    ord.getJumlahGab().setText(String.valueOf(jumlahp(a, b)));
+                    
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         
@@ -154,7 +189,7 @@ public class OrderController {
         dm.setBerat(Integer.parseInt(ord.getBeratTxt().getText()));
         ord.setBeratTxt1(ord.getBeratTxt());
         dm.setOngkosp(Integer.parseInt(ord.getOngkosTxt().getText()));
-        dm.setJumlahp(jumlahp(dm.getOngkosp(), dm.getBerat()));
+        dm.setJumlahp(Integer.parseInt(ord.getJumlahPbr().getText()));
         System.out.print(dm.getJumlahp());
         dm.setOngkosg(Integer.parseInt(ord.getOngkosgab().getText()));
         dm.setJumlahg(jumlahp(dm.getOngkosg(), dm.getBerat()));
@@ -173,12 +208,9 @@ public class OrderController {
     }
     public int jumlahp(int ong, int ber){
        int jumlahpabrik = 0;
-        if (ord.getBoronganCb().isSelected()){
-           jumlahpabrik = 10000000;
-           //ord.getJumlahPbr().setText(Integer.toString(jumlahpabrik));
-        } else {
+        
             jumlahpabrik= ong * ber;
-        }
+        
         return jumlahpabrik; 
     }
       

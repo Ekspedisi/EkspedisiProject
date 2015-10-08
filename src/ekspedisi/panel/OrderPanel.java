@@ -728,4 +728,18 @@ public class OrderPanel extends javax.swing.JPanel {
     public void setBeratTxt1(javax.swing.JTextField BeratTxt1) {
         this.BeratTxt1 = BeratTxt1;
     }
+
+    /**
+     * @param JumlahGab the JumlahGab to set
+     */
+    public void setJumlahGab(javax.swing.JTextField JumlahGab) {
+        this.JumlahGab = JumlahGab;
+    }
+
+    /**
+     * @param JumlahPbr the JumlahPbr to set
+     */
+    public void setJumlahPbr(javax.swing.JTextField JumlahPbr) {
+        this.JumlahPbr = JumlahPbr;
+    }
 }
