@@ -326,14 +326,12 @@ public class OrderPanel extends javax.swing.JPanel {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        nopolTxt.setText("jTextField1");
         nopolTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 nopolTxtKeyPressed(evt);
             }
         });
 
-        supirTxt.setText("jTextField1");
         supirTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 supirTxtKeyPressed(evt);

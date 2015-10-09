@@ -39,6 +39,7 @@ public class OrderController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 inputOrder();
+                
             }
         });
         
@@ -114,9 +115,10 @@ public class OrderController {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                int b = Integer.parseInt(ord.getBeratTxt().getText());
-                int a = Integer.parseInt(ord.getOngkosTxt().getText());
+                
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    int b = Integer.parseInt(ord.getBeratTxt().getText());
+                    int a = Integer.parseInt(ord.getOngkosTxt().getText());
                     ord.getOngkosgab().requestFocus();
                     ord.getJumlahPbr().setText(String.valueOf(jumlahp(a, b)));
                     ord.getBeratTxt1().setText(ord.getBeratTxt().getText());
@@ -155,9 +157,10 @@ public class OrderController {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                int b = Integer.parseInt(ord.getBeratTxt1().getText());
-                int a = Integer.parseInt(ord.getOngkosgab().getText());
+                
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    int b = Integer.parseInt(ord.getBeratTxt1().getText());
+                int a = Integer.parseInt(ord.getOngkosgab().getText());
                     ord.getAddOrder().requestFocus();
                     ord.getJumlahGab().setText(String.valueOf(jumlahp(a, b)));
                     
@@ -180,6 +183,7 @@ public class OrderController {
         dm.setNopol(ord.getNopolTxt().getText());
         dm.setNoDM(ord.getNoDM().getText());
         dm.setSangu(ord.getSanguTxt().getText());
+        dm.setTanggal(ord.getTanggalTxt().getText());
         dm.setPengirim(ord.getPengirimTxt().getText());
         dm.setKota(ord.getKotaCmb().getSelectedItem().toString());
         dm.setPenerima(ord.getPenerimaTxt().getText());
@@ -190,13 +194,12 @@ public class OrderController {
         ord.setBeratTxt1(ord.getBeratTxt());
         dm.setOngkosp(Integer.parseInt(ord.getOngkosTxt().getText()));
         dm.setJumlahp(Integer.parseInt(ord.getJumlahPbr().getText()));
-        System.out.print(dm.getJumlahp());
         dm.setOngkosg(Integer.parseInt(ord.getOngkosgab().getText()));
-        dm.setJumlahg(jumlahp(dm.getOngkosg(), dm.getBerat()));
+        dm.setJumlahg(Integer.parseInt(ord.getJumlahGab().getText()));
         
         Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into DM VALUES (1," + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "','" + dm.getSangu() + "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "','" + dm.getBerat() + "','" + dm.getOngkosp() + "','" + dm.getJumlahp() + "','" + dm.getOngkosg() + "','" + dm.getJumlahg()+ "')";
+            String sql = "INSERT into DM VALUES (1,'" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "'," + dm.getSangu() + ",'" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+ ")";
             
             System.out.print(sql);
             statement.execute(sql);

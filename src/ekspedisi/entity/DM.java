@@ -27,6 +27,7 @@ public class DM {
     private int ongkosg;
     private int jumlahg;
     private boolean borongan;
+    private String tanggal;
 
     /**
      * @return the noDM
@@ -264,6 +265,20 @@ public class DM {
      */
     public void setBorongan(boolean borongan) {
         this.borongan = borongan;
+    }
+
+    /**
+     * @return the tanggal
+     */
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    /**
+     * @param tanggal the tanggal to set
+     */
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
     }
     
     
