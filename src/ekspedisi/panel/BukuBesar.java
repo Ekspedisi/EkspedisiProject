@@ -33,22 +33,7 @@ public class BukuBesar extends javax.swing.JPanel {
     private void initComponents() {
 
         AddTrans = new javax.swing.JDialog();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        KreditCmb = new javax.swing.JComboBox();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        DebitCmb = new javax.swing.JComboBox();
-        DetailDebit = new javax.swing.JTextField();
-        DetailKredit = new javax.swing.JTextField();
-        Jumlah = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        simpanBtn = new javax.swing.JButton();
+        addTransaksi1 = new ekspedisi.panel.AddTransaksi();
         AddBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
         DelBtn = new javax.swing.JButton();
@@ -56,119 +41,21 @@ public class BukuBesar extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
-        jLabel1.setText("Debit");
-
-        jLabel2.setText("Kredit");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("Tambah Transaksi");
-
-        KreditCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel5.setText(":");
-
-        jLabel6.setText("Keterangan");
-
-        jLabel7.setText("Keterangan");
-
-        jLabel8.setText(":");
-
-        jLabel9.setText(":");
-
-        jLabel10.setText(":");
-
-        DebitCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        DetailDebit.setText("jTextField1");
-
-        DetailKredit.setText("jTextField2");
-
-        Jumlah.setText("jTextField3");
-
-        jLabel11.setText("Rp.");
-
-        simpanBtn.setText("Simpan");
-        simpanBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simpanBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout AddTransLayout = new javax.swing.GroupLayout(AddTrans.getContentPane());
         AddTrans.getContentPane().setLayout(AddTransLayout);
         AddTransLayout.setHorizontalGroup(
             AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddTransLayout.createSequentialGroup()
-                .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(simpanBtn)
-                    .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(AddTransLayout.createSequentialGroup()
-                            .addGap(25, 25, 25)
-                            .addComponent(jLabel4))
-                        .addGroup(AddTransLayout.createSequentialGroup()
-                            .addGap(47, 47, 47)
-                            .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(AddTransLayout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel10))
-                                .addGroup(AddTransLayout.createSequentialGroup()
-                                    .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel1))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel8))))
-                            .addGap(18, 18, 18)
-                            .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(DetailDebit, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                .addComponent(KreditCmb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DebitCmb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DetailKredit)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTransLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(addTransaksi1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AddTransLayout.setVerticalGroup(
             AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AddTransLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel4)
-                .addGap(46, 46, 46)
-                .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel5)
-                    .addComponent(DebitCmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel7))
-                    .addGroup(AddTransLayout.createSequentialGroup()
-                        .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DetailDebit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(KreditCmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DetailKredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(AddTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
-                .addComponent(simpanBtn)
-                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTransLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addTransaksi1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         setPreferredSize(new java.awt.Dimension(600, 450));
@@ -241,35 +128,16 @@ public class BukuBesar extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_DelBtnActionPerformed
 
-    private void simpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_simpanBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddBtn;
     private javax.swing.JDialog AddTrans;
-    private javax.swing.JComboBox DebitCmb;
     private javax.swing.JButton DelBtn;
-    private javax.swing.JTextField DetailDebit;
-    private javax.swing.JTextField DetailKredit;
     private javax.swing.JButton EditBtn;
-    private javax.swing.JTextField Jumlah;
-    private javax.swing.JComboBox KreditCmb;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
+    private ekspedisi.panel.AddTransaksi addTransaksi1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton simpanBtn;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -289,16 +157,12 @@ public class BukuBesar extends javax.swing.JPanel {
     /**
      * @return the AddTrans
      */
-    public javax.swing.JDialog getAddTrans() {
-        return AddTrans;
-    }
+    
 
     /**
      * @return the DebitCmb
      */
-    public javax.swing.JComboBox getDebitCmb() {
-        return DebitCmb;
-    }
+    
 
     /**
      * @return the DelBtn
@@ -310,16 +174,12 @@ public class BukuBesar extends javax.swing.JPanel {
     /**
      * @return the DetailDebit
      */
-    public javax.swing.JTextField getDetailDebit() {
-        return DetailDebit;
-    }
+    
 
     /**
      * @return the DetailKredit
      */
-    public javax.swing.JTextField getDetailKredit() {
-        return DetailKredit;
-    }
+    
 
     /**
      * @return the EditBtn
@@ -329,21 +189,17 @@ public class BukuBesar extends javax.swing.JPanel {
     }
 
     /**
-     * @return the Jumlah
+     * @return the AddTrans
      */
-    public javax.swing.JTextField getJumlah() {
-        return Jumlah;
+    public javax.swing.JDialog getAddTrans() {
+        return AddTrans;
     }
 
     /**
-     * @return the KreditCmb
+     * @return the addTransaksi1
      */
-    public javax.swing.JComboBox getKreditCmb() {
-        return KreditCmb;
+    public ekspedisi.panel.AddTransaksi getAddTransaksi1() {
+        return addTransaksi1;
     }
 
-    /**
-     * @return the AddBtn
-     */
-    
 }
