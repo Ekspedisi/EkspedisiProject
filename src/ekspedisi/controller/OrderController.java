@@ -26,6 +26,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
+import java.util.Date;  
+import java.text.DateFormat;  
+import java.text.SimpleDateFormat; 
 
 public class OrderController {
     
@@ -74,7 +77,7 @@ public class OrderController {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
                     ord.getSanguTxt().requestFocus();
-                    ord.getNoDM().setText("ini nomor DM lho");
+                    ord.getNoDM().setText("on progress");
                 }
             }
 
@@ -95,7 +98,7 @@ public class OrderController {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
                     ord.getTanggalTxt().requestFocus();
-                    
+                    ord.getTanggalTxt().setText(pickTanggal());
                 }
             }
             
@@ -209,12 +212,54 @@ public class OrderController {
 
         }
     }
+    
     public int jumlahp(int ong, int ber){
-       int jumlahpabrik = 0;
-        
-            jumlahpabrik= ong * ber;
-        
+        int jumlahpabrik = 0;
+        jumlahpabrik= ong * ber;
         return jumlahpabrik; 
     }
+    
+    public String pickTanggal(){
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+        Date date = new Date();  
+        return dateFormat.format(date);  
+        
+    }
       
-}
+//    public String setDM(){
+//        String dmNo= "";
+//        
+//        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");  
+//        Date date = new Date();
+//        
+//        String a = dateFormat.format(date);  
+//        try {
+//            Koneksi.createConnection();
+//            Statement statement = Koneksi.conn.createStatement();
+//            String query = "SELECT MAX(right(NoPegawai,1)) AS no FROM Data";
+//                ResultSet rs = statement.executeQuery(query);
+//		while(rs.next()) {
+//                    if(rs.first() == false)    {
+//			txtNoPegawai.setText("P001");
+//                    }else	{
+//                        rs.last();
+//			int noPegawai = rs.getInt(1) + 1;
+//			String no = String.valueOf(noPegawai);
+//			int noLong = no.length();
+//                            for(int a=0;a<2-noLong;a++)	{
+//				no = "00" + no;
+//                            }
+//		txtNoPegawai.setText("P" + no);
+//                    }
+//		}
+//		rs.close();
+//                statement.close();
+//		}
+//		catch(Exception ex)
+//		{
+//			System.out.println(ex);
+//		}
+//	}
+//        
+    }
+
