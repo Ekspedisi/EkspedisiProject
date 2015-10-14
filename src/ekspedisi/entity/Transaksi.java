@@ -9,7 +9,7 @@ package ekspedisi.entity;
  *
  * @author amateur
  */
-public class Rekening {
+public class Transaksi {
     private String tanggal;
     private String keterangan;
     private int kredit;

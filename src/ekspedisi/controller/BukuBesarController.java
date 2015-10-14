@@ -5,11 +5,17 @@
  */
 package ekspedisi.controller;
 
+
+import ekspedisi.entity.Transaksi;
+
 import ekspedisi.panel.BukuBesar;
+import ekspedisi.util.Koneksi;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -20,7 +26,8 @@ public class BukuBesarController {
     
     BukuBesar bub;
     private int Index;
-    private String tabelName;
+    private String DebtabelName;
+    private String KretabelName;
     
     public BukuBesarController(BukuBesar bub) {
         this.bub = bub;
@@ -40,6 +47,7 @@ public class BukuBesarController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("simpan");
+                
             }
         });
         
@@ -48,29 +56,50 @@ public class BukuBesarController {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 setIndex(bub.getAddTransaksi1().getDebitCmb().getSelectedIndex());
-                
-                if (getIndex() == 1) {
-                    System.out.print("set nama tabel : ");
-                    setTabelName("Kas");
-                    System.out.println(getTabelName());
-                } else if (getIndex()== 0 ){
-                    System.out.print("set nama tabel : ");
-                    setTabelName("tabel kas");
-                    System.out.println(getTabelName());
+                String jenis = "debit";
+                if (getIndex() == 0) {
+                    setDebtabelName("Kas");
+                    inputtransaksi( getDebtabelName(), jenis);
+                } else if (getIndex()== 1 ){
+                    setDebtabelName("Rekening");
+                    Transaksi rek = new Transaksi();
                 } else if (getIndex()== 2 ){
-                    System.out.print("set nama tabel : ");
-                    setTabelName("tabel biaya operasional");
-                    System.out.println(getTabelName());
+                    setDebtabelName("BO");
+                    
                 } else if (getIndex()== 3 ){
-                    System.out.print("set nama tabel : ");
-                    setTabelName("tabel kantor");
-                    System.out.println(getTabelName());
+                    setDebtabelName("BiayaKantor");
                 }
             }
         });
         
+        
     }
+    
+    public void inputtransaksi(String namatabel, String jenis){
+        try {
+            
+            Transaksi trans = new Transaksi();
+            if (jenis == "debit"){
+            trans.setKeterangan(bub.getAddTransaksi1().getDetailDebit().getText());
+            trans.setDebit(Integer.parseInt(bub.getAddTransaksi1().getJumlah().getText()));
+            trans.setKredit(0);
+            } else {
+            trans.setKeterangan(bub.getAddTransaksi1().getDetailKredit().getText());
+            trans.setDebit(Integer.parseInt(bub.getAddTransaksi1().getJumlah().getText()));
+            trans.setKredit(0);
+            }
+            Koneksi.createConnection();
+            Statement statement = Koneksi.conn.createStatement();
+            String sql = "INSERT into "+ getDebtabelName() +" VALUES (1," + trans.getKeterangan() + "," + trans.getDebit() + "," + trans.getKredit()+")";
+            System.out.print(sql);
+            statement.execute(sql);
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+            System.out.println("sql supir error");
 
+        }
+    
+    }
     /**
      * @return the Index
      */
@@ -86,16 +115,35 @@ public class BukuBesarController {
     }
 
     /**
-     * @return the tabelName
+     * @return the DebtabelName
      */
-    public String getTabelName() {
-        return tabelName;
+    public String getDebtabelName() {
+        return DebtabelName;
     }
 
     /**
-     * @param tabelName the tabelName to set
+     * @param DebtabelName the DebtabelName to set
      */
-    public void setTabelName(String tabelName) {
-        this.tabelName = tabelName;
+    public void setDebtabelName(String DebtabelName) {
+        this.DebtabelName = DebtabelName;
     }
+
+    /**
+     * @return the KretabelName
+     */
+    public String getKretabelName() {
+        return KretabelName;
+    }
+
+    /**
+     * @param KretabelName the KretabelName to set
+     */
+    public void setKretabelName(String KretabelName) {
+        this.KretabelName = KretabelName;
+    }
+
+    /**
+     * @return the tabelName
+     */
+    
 }
