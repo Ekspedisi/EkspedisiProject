@@ -5,7 +5,9 @@
  */
 package ekspedisi.controller;
 
+import ekspedisi.entity.Gabungan;
 import ekspedisi.entity.Pabrik;
+import ekspedisi.entity.Truk;
 import ekspedisi.panel.Direktori;
 import ekspedisi.entity.supir;
 import ekspedisi.util.Koneksi;
@@ -16,6 +18,7 @@ import java.awt.event.ItemListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.Action;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,6 +29,7 @@ public class DirektoriController {
 
     private int Index;
     Direktori dir;
+    private String state;
 
     public DirektoriController(Direktori dir) {
         this.dir = dir;
@@ -37,6 +41,23 @@ public class DirektoriController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                state = "insert";
+                showDialog();
+            }
+        });
+        dir.getEditBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                state = "update";
+                showDialog();
+            }
+        });
+        dir.getDelBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                state = "delete";
                 showDialog();
             }
         });
@@ -49,6 +70,13 @@ public class DirektoriController {
                 dir.getDialogSupir().setVisible(false);
             }
         });
+        dir.getAddSupir1().getCancelSupir().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dir.getDialogSupir().setVisible(false);
+            }
+        });
 
         dir.getAddPabrik1().getSaveBtn().addActionListener(new ActionListener() {
 
@@ -58,16 +86,108 @@ public class DirektoriController {
                 dir.getDialogPabrik().setVisible(false);
             }
         });
-        dir.getAddSupir1().getCancelSupir().addActionListener(new ActionListener() {
+        dir.getAddPabrik1().getCancelBtn().addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                dir.getDialogSupir().setVisible(false);
+            public void actionPerformed(ActionEvent ae) {
+                dir.getDialogPabrik().setVisible(false);
+            }
+        });
+
+        dir.getAddTruk1().getSaveBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                inputTruk();
+                dir.getDialogTruk().setVisible(false);
+            }
+        });
+        dir.getAddTruk1().getCancelBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                dir.getDialogTruk().setVisible(false);
+            }
+        });
+
+        dir.getAddGabungan1().getSaveBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                inputPTGabungan();
+                dir.getDialogGabungan().setVisible(false);
+            }
+        });
+        dir.getAddGabungan1().getCancelBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                dir.getDialogGabungan().setVisible(false);
             }
         });
 
         dir.getDirCombo().addItemListener(new comboDirListener());
 
+    }
+
+    public void inputTruk() {
+        try {
+            // set isi dari entity supir
+            Truk truk = new Truk();
+            truk.setMerk(dir.getAddTruk1().getMrekTrukTxt().getText());
+            truk.setMuatan(Integer.parseInt(dir.getAddTruk1().getMuatanTxt().getText()));
+            truk.setNopol(dir.getAddTruk1().getNoPolTxt().getText());
+            truk.setGabungan(dir.getAddTruk1().getPTGabTxt().getText());
+
+            //input database
+            Koneksi.createConnection();
+            Statement statement = Koneksi.conn.createStatement();
+            String sql = "INSERT into Truk VALUES(1,'" + truk.getNopol() + "'," + truk.getMuatan() + ",'" + truk.getMerk() + "','" + truk.getGabungan() + "')";
+
+            System.out.print(sql);
+            statement.execute(sql);
+            //refresh textfield
+            dir.getAddTruk1().getNoPolTxt().setText("");
+            dir.getAddTruk1().getMuatanTxt().setText("");
+            dir.getAddTruk1().getMrekTrukTxt().setText("");
+            dir.getAddTruk1().getPTGabTxt().setText("");
+            RefreshTabel();
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+            System.out.println("sql Truk error");
+
+        }
+    }
+
+    public void inputPTGabungan() {
+        try {
+            // set isi dari entity supir
+            Gabungan Gab = new Gabungan();
+            Gab.setNama(dir.getAddGabungan1().getNamaGabTxt().getText());
+            Gab.setAlamat(dir.getAddGabungan1().getAlamatGabTxt().getText());
+            Gab.setNorek(dir.getAddGabungan1().getNorekGabTxt().getText());
+            Gab.setNarek(dir.getAddGabungan1().getNarekgabTxt().getText());
+            Gab.setBank(dir.getAddGabungan1().getBankgabTxt().getText());
+
+            //input database
+            Koneksi.createConnection();
+            Statement statement = Koneksi.conn.createStatement();
+            String sql = "INSERT into PTGabungan VALUES(1,'" + Gab.getNama() + "','" + Gab.getAlamat() + "','" + Gab.getNorek() + "','" + Gab.getNarek() + "','" + Gab.getBank() + "')";
+
+            System.out.print(sql);
+            statement.execute(sql);
+            //refresh textfield
+            dir.getAddGabungan1().getAlamatGabTxt().setText("");
+            dir.getAddGabungan1().getBankgabTxt().setText("");
+            dir.getAddGabungan1().getNarekgabTxt().setText("");
+            dir.getAddGabungan1().getNorekGabTxt().setText("");
+            dir.getAddGabungan1().getNamaGabTxt().setText("");
+            RefreshTabel();
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+            System.out.println("sql Gabungan error");
+
+        }
     }
 
     public void InputSupir() {
@@ -128,6 +248,10 @@ public class DirektoriController {
         }
     }
 
+    /*
+     * Method utk merubah tabel 
+     * berdasarkan index di combobox
+     */
     public void ChangeTableModel(int index) {
 
         DefaultTableModel model = (DefaultTableModel) dir.getTabelDir().getModel();
@@ -148,6 +272,7 @@ public class DirektoriController {
             model.addColumn("No. Polisi");
             model.addColumn("Muatan");
             model.addColumn("Merk");
+            model.addColumn("PT.Gabungan");
 
         } else if (getIndex() == 2) {
             model.setColumnCount(0);
@@ -160,6 +285,9 @@ public class DirektoriController {
             model.addColumn("No.");
             model.addColumn("Nama PT.Gabungan");
             model.addColumn("Alamat");
+            model.addColumn("No. Rekening");
+            model.addColumn("Nama Rekening");
+            model.addColumn("Bank");
 
         }
     }
@@ -211,7 +339,8 @@ public class DirektoriController {
                     rs.getString(1),
                     rs.getString(2),
                     rs.getString(3),
-                    rs.getString(4)
+                    rs.getString(4),
+                    rs.getString(5)
                 });
             }
             rs.close();
@@ -265,7 +394,10 @@ public class DirektoriController {
                 model.addRow(new Object[]{
                     rs.getString(1),
                     rs.getString(2),
-                    rs.getString(3)
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6)
                 });
             }
             rs.close();
@@ -305,6 +437,20 @@ public class DirektoriController {
         this.Index = Index;
     }
 
+    /**
+     * @return the state
+     */
+    public String getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(String state) {
+        this.state = state;
+    }
+
     class comboDirListener implements ItemListener {
 
         @Override
@@ -322,21 +468,21 @@ public class DirektoriController {
             dir.getDialogSupir().pack();
             dir.getDialogSupir().setLocationRelativeTo(null);
             dir.getDialogSupir().setVisible(true);
-            
+
         } else if (getIndex() == 1) {
             dir.getDialogTruk().pack();
             dir.getDialogTruk().setVisible(true);
             dir.getDialogTruk().setLocationRelativeTo(null);
         } else if (getIndex() == 2) {
-            dir.getDialogPabrik().pack();  
+            dir.getDialogPabrik().pack();
             dir.getDialogPabrik().setLocationRelativeTo(null);
             dir.getDialogPabrik().setVisible(true);
-          
+
         } else if (getIndex() == 3) {
             dir.getDialogGabungan().pack();
             dir.getDialogGabungan().setLocationRelativeTo(null);
             dir.getDialogGabungan().setVisible(true);
-            
+
         }
     }
 

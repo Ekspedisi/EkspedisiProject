@@ -172,7 +172,4 @@ public class HomePanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
-    /**
-     * @return the tabel1
-     */
 }

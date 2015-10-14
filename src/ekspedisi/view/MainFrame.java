@@ -63,6 +63,9 @@ public class MainFrame extends javax.swing.JFrame {
         PremiBtn = new javax.swing.JButton();
         LapRekBtn = new javax.swing.JButton();
         BukuBesarBtn = new javax.swing.JButton();
+        PembayaranPTGabBtn = new javax.swing.JButton();
+        PenTagihanBtn = new javax.swing.JButton();
+        CekMasukBtn = new javax.swing.JButton();
         mainPanel = new ekspedisi.panel.MainPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -155,6 +158,12 @@ public class MainFrame extends javax.swing.JFrame {
         BukuBesarBtn.setBackground(new java.awt.Color(255, 255, 255));
         BukuBesarBtn.setText("Buku Besar");
 
+        PembayaranPTGabBtn.setText("Pembayaran PT. Gab");
+
+        PenTagihanBtn.setText("Penerimaan Tagihan");
+
+        CekMasukBtn.setText("Cek Masuk");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -165,23 +174,31 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(PremiBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(LapRekBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
             .addComponent(BukuBesarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+            .addComponent(PembayaranPTGabBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PenTagihanBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CekMasukBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DirektoriBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(OrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PremiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LapRekBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BukuBesarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PembayaranPTGabBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PenTagihanBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CekMasukBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout BgPanelLayout = new javax.swing.GroupLayout(BgPanel);
@@ -258,10 +275,13 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BgPanel;
     private javax.swing.JButton BukuBesarBtn;
+    private javax.swing.JButton CekMasukBtn;
     private javax.swing.JButton DirektoriBtn;
     private javax.swing.JButton HomeBtn;
     private javax.swing.JButton LapRekBtn;
     private javax.swing.JButton OrderBtn;
+    private javax.swing.JButton PembayaranPTGabBtn;
+    private javax.swing.JButton PenTagihanBtn;
     private javax.swing.JButton PremiBtn;
     private javax.swing.JPanel TittlePanel;
     private javax.swing.JLabel TittleText1;
