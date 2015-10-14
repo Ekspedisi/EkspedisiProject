@@ -6,16 +6,10 @@
 package ekspedisi.controller;
 
 import ekspedisi.panel.MainPanel;
-import ekspedisi.util.Koneksi;
 import ekspedisi.view.MainFrame;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JPanel;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -80,6 +74,20 @@ public class LandingController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.show("bukubesar");
+            }
+        });
+        MainFrame.getPembayaranPTGabBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("pembayaran");
+            }
+        });
+       MainFrame.getPenTagihanBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("tagihan");
             }
         });
         

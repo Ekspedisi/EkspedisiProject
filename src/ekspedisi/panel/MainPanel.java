@@ -33,6 +33,8 @@ public class MainPanel extends javax.swing.JPanel {
         orderPanel1 = new ekspedisi.panel.OrderPanel();
         laporanRekening1 = new ekspedisi.panel.LaporanRekening();
         premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
+        pembayaranGabPanel1 = new ekspedisi.panel.PembayaranGabPanel();
+        penerimaanTagihanPanel1 = new ekspedisi.panel.PenerimaanTagihanPanel();
 
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setLayout(new java.awt.CardLayout());
@@ -42,6 +44,8 @@ public class MainPanel extends javax.swing.JPanel {
         add(orderPanel1, "order");
         add(laporanRekening1, "rekening");
         add(premiSupirPanel1, "premi");
+        add(pembayaranGabPanel1, "pembayaran");
+        add(penerimaanTagihanPanel1, "tagihan");
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -51,6 +55,8 @@ public class MainPanel extends javax.swing.JPanel {
     private ekspedisi.panel.HomePanel homePanel1;
     private ekspedisi.panel.LaporanRekening laporanRekening1;
     private ekspedisi.panel.OrderPanel orderPanel1;
+    private ekspedisi.panel.PembayaranGabPanel pembayaranGabPanel1;
+    private ekspedisi.panel.PenerimaanTagihanPanel penerimaanTagihanPanel1;
     private ekspedisi.panel.PremiSupirPanel premiSupirPanel1;
     // End of variables declaration//GEN-END:variables
 
@@ -94,5 +100,19 @@ public class MainPanel extends javax.swing.JPanel {
      */
     public ekspedisi.panel.PremiSupirPanel getPremiSupirPanel1() {
         return premiSupirPanel1;
+    }
+
+    /**
+     * @return the pembayaranGabPanel1
+     */
+    public ekspedisi.panel.PembayaranGabPanel getPembayaranGabPanel1() {
+        return pembayaranGabPanel1;
+    }
+
+    /**
+     * @return the penerimaanTagihanPanel1
+     */
+    public ekspedisi.panel.PenerimaanTagihanPanel getPenerimaanTagihanPanel1() {
+        return penerimaanTagihanPanel1;
     }
 }

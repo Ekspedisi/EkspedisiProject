@@ -335,4 +335,25 @@ public class MainFrame extends javax.swing.JFrame {
         return PremiBtn;
     }
 
+    /**
+     * @return the CekMasukBtn
+     */
+    public javax.swing.JButton getCekMasukBtn() {
+        return CekMasukBtn;
+    }
+
+    /**
+     * @return the PembayaranPTGabBtn
+     */
+    public javax.swing.JButton getPembayaranPTGabBtn() {
+        return PembayaranPTGabBtn;
+    }
+
+    /**
+     * @return the PenTagihanBtn
+     */
+    public javax.swing.JButton getPenTagihanBtn() {
+        return PenTagihanBtn;
+    }
+
 }

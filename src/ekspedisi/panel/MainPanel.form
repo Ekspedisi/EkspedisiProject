@@ -65,5 +65,19 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="ekspedisi.panel.PembayaranGabPanel" name="pembayaranGabPanel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+          <CardConstraints cardName="pembayaran"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="ekspedisi.panel.PenerimaanTagihanPanel" name="penerimaanTagihanPanel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+          <CardConstraints cardName="tagihan"/>
+        </Constraint>
+      </Constraints>
+    </Component>
   </SubComponents>
 </Form>
