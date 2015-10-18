@@ -47,6 +47,7 @@ public class BukuBesarController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("simpan");
+                inputtransaksi();
                 
             }
         });
@@ -59,7 +60,7 @@ public class BukuBesarController {
                 String jenis = "debit";
                 if (getIndex() == 0) {
                     setDebtabelName("Kas");
-                    inputtransaksi( getDebtabelName(), jenis);
+                    
                 } else if (getIndex()== 1 ){
                     setDebtabelName("Rekening");
                     Transaksi rek = new Transaksi();
@@ -72,27 +73,45 @@ public class BukuBesarController {
             }
         });
         
+        bub.getAddTransaksi1().getKreditCmb().addItemListener(new ItemListener() {
+
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                setIndex(bub.getAddTransaksi1().getDebitCmb().getSelectedIndex());
+                String jenis = "debit";
+                if (getIndex() == 0) {
+                    setKretabelName("Kas");
+                    
+                } else if (getIndex()== 1 ){
+                    setKretabelName("Rekening");
+                    Transaksi rek = new Transaksi();
+                } else if (getIndex()== 2 ){
+                    setKretabelName("BO");
+                    
+                } else if (getIndex()== 3 ){
+                    setKretabelName("BiayaKantor");
+                }
+            }
+        });
         
     }
     
-    public void inputtransaksi(String namatabel, String jenis){
+    public void inputtransaksi(){
         try {
             
             Transaksi trans = new Transaksi();
-            if (jenis == "debit"){
-            trans.setKeterangan(bub.getAddTransaksi1().getDetailDebit().getText());
-            trans.setDebit(Integer.parseInt(bub.getAddTransaksi1().getJumlah().getText()));
-            trans.setKredit(0);
-            } else {
-            trans.setKeterangan(bub.getAddTransaksi1().getDetailKredit().getText());
-            trans.setDebit(Integer.parseInt(bub.getAddTransaksi1().getJumlah().getText()));
-            trans.setKredit(0);
-            }
+           trans.setKeterangan(bub.getAddTransaksi1().getDetailDebit().getText());
+           trans.setKeterangank(bub.getAddTransaksi1().getDetailKredit().getText());
+           trans.setDebit(Integer.parseInt(bub.getAddTransaksi1().getJumlah().getText()));
+           trans.setKredit(Integer.parseInt(bub.getAddTransaksi1().getJumlah().getText()));
             Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into "+ getDebtabelName() +" VALUES (1," + trans.getKeterangan() + "," + trans.getDebit() + "," + trans.getKredit()+")";
-            System.out.print(sql);
-            statement.execute(sql);
+            String sqlD = "INSERT into "+ getDebtabelName() +" VALUES(1,'" + trans.getKeterangan() + "'," + trans.getDebit() + ",0)";
+            String sqlK = "INSERT into "+ getKretabelName() +" VALUES(1,'" + trans.getKeterangank() + "',0," + trans.getKredit()+")";
+            System.out.println(sqlD);
+            System.out.println(sqlK);
+            statement.execute(sqlD);
+            statement.execute(sqlK);
         } catch (SQLException f) {
             System.out.println(f.getMessage());
             System.out.println("sql supir error");

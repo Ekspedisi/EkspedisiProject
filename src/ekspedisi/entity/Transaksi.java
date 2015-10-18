@@ -12,6 +12,7 @@ package ekspedisi.entity;
 public class Transaksi {
     private String tanggal;
     private String keterangan;
+    private String keterangank;
     private int kredit;
     private int debit;
 
@@ -69,5 +70,19 @@ public class Transaksi {
      */
     public void setDebit(int debit) {
         this.debit = debit;
+    }
+
+    /**
+     * @return the keterangank
+     */
+    public String getKeterangank() {
+        return keterangank;
+    }
+
+    /**
+     * @param keterangank the keterangank to set
+     */
+    public void setKeterangank(String keterangank) {
+        this.keterangank = keterangank;
     }
 }
