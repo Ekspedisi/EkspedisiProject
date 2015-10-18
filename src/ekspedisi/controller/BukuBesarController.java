@@ -31,6 +31,8 @@ public class BukuBesarController {
     
     public BukuBesarController(BukuBesar bub) {
         this.bub = bub;
+        setDebtabelName("Kas");
+        setKretabelName("Kas");
         
         bub.getAddBtn().addActionListener(new ActionListener() {
             
@@ -60,16 +62,15 @@ public class BukuBesarController {
                 String jenis = "debit";
                 if (getIndex() == 0) {
                     setDebtabelName("Kas");
-                    
                 } else if (getIndex()== 1 ){
                     setDebtabelName("Rekening");
                     Transaksi rek = new Transaksi();
                 } else if (getIndex()== 2 ){
                     setDebtabelName("BO");
-                    
                 } else if (getIndex()== 3 ){
                     setDebtabelName("BiayaKantor");
                 }
+                System.out.println(getDebtabelName());
             }
         });
         
@@ -77,17 +78,13 @@ public class BukuBesarController {
 
             @Override
             public void itemStateChanged(ItemEvent e) {
-                setIndex(bub.getAddTransaksi1().getDebitCmb().getSelectedIndex());
-                String jenis = "debit";
+                setIndex(bub.getAddTransaksi1().getKreditCmb().getSelectedIndex());
                 if (getIndex() == 0) {
                     setKretabelName("Kas");
-                    
                 } else if (getIndex()== 1 ){
                     setKretabelName("Rekening");
-                    Transaksi rek = new Transaksi();
                 } else if (getIndex()== 2 ){
                     setKretabelName("BO");
-                    
                 } else if (getIndex()== 3 ){
                     setKretabelName("BiayaKantor");
                 }
