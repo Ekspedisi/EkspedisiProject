@@ -29,23 +29,24 @@ public class MainPanel extends javax.swing.JPanel {
 
         homePanel1 = new ekspedisi.panel.HomePanel();
         direktori1 = new ekspedisi.panel.Direktori();
-        bukuBesar1 = new ekspedisi.panel.BukuBesar();
         orderPanel1 = new ekspedisi.panel.OrderPanel();
         laporanRekening1 = new ekspedisi.panel.LaporanRekening();
         premiSupirPanel1 = new ekspedisi.panel.PremiSupirPanel();
         pembayaranGabPanel1 = new ekspedisi.panel.PembayaranGabPanel();
         penerimaanTagihanPanel1 = new ekspedisi.panel.PenerimaanTagihanPanel();
+        bukuBesar1 = new ekspedisi.panel.BukuBesar();
 
-        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1105, 560));
         setLayout(new java.awt.CardLayout());
         add(homePanel1, "home");
         add(direktori1, "direktori");
-        add(bukuBesar1, "bukubesar");
         add(orderPanel1, "order");
-        add(laporanRekening1, "rekening");
+        add(laporanRekening1, "laporan");
         add(premiSupirPanel1, "premi");
         add(pembayaranGabPanel1, "pembayaran");
         add(penerimaanTagihanPanel1, "tagihan");
+        add(bukuBesar1, "buku");
     }// </editor-fold>//GEN-END:initComponents
 
 

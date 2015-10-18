@@ -5,92 +5,193 @@
  */
 package ekspedisi.controller;
 
+import ekspedisi.PanelComponent.NavBar;
 import ekspedisi.panel.MainPanel;
-import ekspedisi.view.MainFrame;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 /**
  *
  * @author M Arif Royanto
  */
 public class LandingController {
-    
+
     CardLayoutController controller;
     MainPanel MainPanel;
-    MainFrame MainFrame;
-    
-    public LandingController(MainPanel MainPanel, MainFrame MainFrame){
+    NavBar navbar;
+    final Object[] Btn = new JButton[9];
+
+    public LandingController(MainPanel MainPanel, NavBar navbar) {
         this.MainPanel = MainPanel;
-        this.MainFrame = MainFrame;
-        
+        this.navbar = navbar;
+
         controller = new CardLayoutController();
         controller.setCardLayout((CardLayout) MainPanel.getLayout());
-        controller.setParentCard(MainPanel);        
-        
-        MainFrame.getHomeBtn().addActionListener(new ActionListener() {
+        controller.setParentCard(MainPanel);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.show("home");
-            }
-        });
-        
-        MainFrame.getDirektoriBtn().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.show("direktori");
-                MainPanel.getDirektori1().getController().RefreshTabel();
-            }
-        });
-        
-        MainFrame.getOrderBtn().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.show("order");
-            }
-        });
-        
-        MainFrame.getPremiBtn().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.show("premi");
-            }
-        });
-        
-        MainFrame.getLapRekBtn().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.show("rekening");
-            }
-        });
-        MainFrame.getBukuBesarBtn().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.show("bukubesar");
-            }
-        });
-        MainFrame.getPembayaranPTGabBtn().addActionListener(new ActionListener() {
+        navbar.getHomeBtn1().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                controller.show("pembayaran");
+                controller.show("home");
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
             }
         });
-       MainFrame.getPenTagihanBtn().addActionListener(new ActionListener() {
+        
+        navbar.getOrderBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("order");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
+            }
+        });
+        
+        navbar.getTagihanBtn1().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
                 controller.show("tagihan");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
             }
         });
         
+        navbar.getPembayaranBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("pembayaran");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
+            }
+        });
+        
+        navbar.getPremiBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("premi");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
+            }
+        });
+        
+        navbar.getBukuBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("buku");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
+            }
+        });
+        
+        navbar.getLaporanBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("laporan");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
+            }
+        });
+        
+        navbar.getDirektoriBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("direktori");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getLogoutBtn1().resetButton();
+
+            }
+        });
+        
+        navbar.getLogoutBtn1().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                controller.show("logout");
+                navbar.getHomeBtn1().resetButton();
+                navbar.getOrderBtn1().resetButton();
+                navbar.getTagihanBtn1().resetButton();
+                navbar.getPembayaranBtn1().resetButton();
+                navbar.getPremiBtn1().resetButton();
+                navbar.getBukuBtn1().resetButton();
+                navbar.getLaporanBtn1().resetButton();
+                navbar.getDirektoriBtn1().resetButton();
+
+            }
+        });
+
     }
-    
+
+    public void resetButButton(JButton active) {
+        for (int i = 0; i < Btn.length; i++) {
+            if (active != Btn[i]) {
+
+            }
+        }
+    }
+
 }

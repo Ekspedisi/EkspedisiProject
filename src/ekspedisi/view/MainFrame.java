@@ -24,12 +24,10 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-    LandingController controller;
     public MainFrame() {
         initComponents();
         setLocationRelativeTo(null);
         
-        controller = new LandingController(mainPanel, this);
     }
     
     public static MainFrame getInstace(){
@@ -49,24 +47,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BgPanel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        TittlePanel = new javax.swing.JPanel();
-        TittleText1 = new javax.swing.JLabel();
-        TittleText2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        HomeBtn = new javax.swing.JButton();
-        DirektoriBtn = new javax.swing.JButton();
-        OrderBtn = new javax.swing.JButton();
-        PremiBtn = new javax.swing.JButton();
-        LapRekBtn = new javax.swing.JButton();
-        BukuBesarBtn = new javax.swing.JButton();
-        PembayaranPTGabBtn = new javax.swing.JButton();
-        PenTagihanBtn = new javax.swing.JButton();
-        CekMasukBtn = new javax.swing.JButton();
-        mainPanel = new ekspedisi.panel.MainPanel();
+        mainPanel21 = new ekspedisi.panel.LandingPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -75,160 +56,7 @@ public class MainFrame extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-
-        BgPanel.setBackground(new java.awt.Color(242, 242, 242));
-
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        TittlePanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        TittleText1.setText("Perusahaan Angkutan");
-
-        TittleText2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TittleText2.setText("SUMBER MAKMUR");
-
-        jLabel1.setText("Jalan Green Ville Blok AI no. 06 - Jakarta Barat");
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ekspedisi/image/logosementara.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-
-        javax.swing.GroupLayout TittlePanelLayout = new javax.swing.GroupLayout(TittlePanel);
-        TittlePanel.setLayout(TittlePanelLayout);
-        TittlePanelLayout.setHorizontalGroup(
-            TittlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TittlePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(TittlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TittleText2)
-                    .addComponent(jLabel1)
-                    .addComponent(TittleText1))
-                .addContainerGap(429, Short.MAX_VALUE))
-        );
-        TittlePanelLayout.setVerticalGroup(
-            TittlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TittlePanelLayout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(TittlePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TittleText1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TittleText2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TittlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TittlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-
-        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        HomeBtn.setBackground(new java.awt.Color(255, 255, 255));
-        HomeBtn.setText("Home");
-
-        DirektoriBtn.setBackground(new java.awt.Color(255, 255, 255));
-        DirektoriBtn.setText("Direktori");
-
-        OrderBtn.setBackground(new java.awt.Color(255, 255, 255));
-        OrderBtn.setText("Order");
-
-        PremiBtn.setBackground(new java.awt.Color(255, 255, 255));
-        PremiBtn.setText("Premi Supir");
-
-        LapRekBtn.setBackground(new java.awt.Color(255, 255, 255));
-        LapRekBtn.setText("Laporan Rekening");
-
-        BukuBesarBtn.setBackground(new java.awt.Color(255, 255, 255));
-        BukuBesarBtn.setText("Buku Besar");
-
-        PembayaranPTGabBtn.setText("Pembayaran PT. Gab");
-
-        PenTagihanBtn.setText("Penerimaan Tagihan");
-
-        CekMasukBtn.setText("Cek Masuk");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HomeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DirektoriBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(OrderBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(PremiBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LapRekBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-            .addComponent(BukuBesarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-            .addComponent(PembayaranPTGabBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(PenTagihanBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CekMasukBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DirektoriBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(OrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PremiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LapRekBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BukuBesarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PembayaranPTGabBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PenTagihanBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CekMasukBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout BgPanelLayout = new javax.swing.GroupLayout(BgPanel);
-        BgPanel.setLayout(BgPanelLayout);
-        BgPanelLayout.setHorizontalGroup(
-            BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BgPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BgPanelLayout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        BgPanelLayout.setVerticalGroup(
-            BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BgPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(BgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10))
-        );
-
-        getContentPane().add(BgPanel, java.awt.BorderLayout.PAGE_END);
+        getContentPane().add(mainPanel21, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -273,87 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BgPanel;
-    private javax.swing.JButton BukuBesarBtn;
-    private javax.swing.JButton CekMasukBtn;
-    private javax.swing.JButton DirektoriBtn;
-    private javax.swing.JButton HomeBtn;
-    private javax.swing.JButton LapRekBtn;
-    private javax.swing.JButton OrderBtn;
-    private javax.swing.JButton PembayaranPTGabBtn;
-    private javax.swing.JButton PenTagihanBtn;
-    private javax.swing.JButton PremiBtn;
-    private javax.swing.JPanel TittlePanel;
-    private javax.swing.JLabel TittleText1;
-    private javax.swing.JLabel TittleText2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private ekspedisi.panel.MainPanel mainPanel;
+    private ekspedisi.panel.LandingPanel mainPanel21;
     // End of variables declaration//GEN-END:variables
-
-    /**
-     * @return the BukuBesarBtn
-     */
-    public javax.swing.JButton getBukuBesarBtn() {
-        return BukuBesarBtn;
-    }
-
-    /**
-     * @return the DirektoriBtn
-     */
-    public javax.swing.JButton getDirektoriBtn() {
-        return DirektoriBtn;
-    }
-
-    /**
-     * @return the HomeBtn
-     */
-    public javax.swing.JButton getHomeBtn() {
-        return HomeBtn;
-    }
-
-    /**
-     * @return the LapRekBtn
-     */
-    public javax.swing.JButton getLapRekBtn() {
-        return LapRekBtn;
-    }
-
-    /**
-     * @return the OrderBtn
-     */
-    public javax.swing.JButton getOrderBtn() {
-        return OrderBtn;
-    }
-
-    /**
-     * @return the PremiBtn
-     */
-    public javax.swing.JButton getPremiBtn() {
-        return PremiBtn;
-    }
-
-    /**
-     * @return the CekMasukBtn
-     */
-    public javax.swing.JButton getCekMasukBtn() {
-        return CekMasukBtn;
-    }
-
-    /**
-     * @return the PembayaranPTGabBtn
-     */
-    public javax.swing.JButton getPembayaranPTGabBtn() {
-        return PembayaranPTGabBtn;
-    }
-
-    /**
-     * @return the PenTagihanBtn
-     */
-    public javax.swing.JButton getPenTagihanBtn() {
-        return PenTagihanBtn;
-    }
 
 }

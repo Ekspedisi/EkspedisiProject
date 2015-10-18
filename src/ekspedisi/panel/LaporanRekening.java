@@ -16,6 +16,8 @@ public class LaporanRekening extends javax.swing.JPanel {
      */
     public LaporanRekening() {
         initComponents();
+        jScrollPane1.getViewport().setOpaque(false);
+        jTable1.setGridColor(jTable1.getBackground());
     }
 
     /**
@@ -37,9 +39,14 @@ public class LaporanRekening extends javax.swing.JPanel {
         TotalKredet = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Balance = new javax.swing.JTextField();
+        OkBtn = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("LAPORAN REKENING");
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,6 +69,8 @@ public class LaporanRekening extends javax.swing.JPanel {
         jLabel3.setText("Total");
 
         jLabel4.setText("Balance");
+
+        OkBtn.setText("OK");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -86,8 +95,10 @@ public class LaporanRekening extends javax.swing.JPanel {
                             .addComponent(TotalDebet, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                             .addComponent(Balance))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TotalKredet, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TotalKredet, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(OkBtn))))
+                .addContainerGap(555, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,13 +120,16 @@ public class LaporanRekening extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(Balance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(OkBtn)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Balance;
+    private javax.swing.JButton OkBtn;
     private javax.swing.JTextField TotalDebet;
     private javax.swing.JTextField TotalKredet;
     private javax.swing.JComboBox jComboBox1;
@@ -126,4 +140,32 @@ public class LaporanRekening extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the Balance
+     */
+    public javax.swing.JTextField getBalance() {
+        return Balance;
+    }
+
+    /**
+     * @return the OkBtn
+     */
+    public javax.swing.JButton getOkBtn() {
+        return OkBtn;
+    }
+
+    /**
+     * @return the TotalDebet
+     */
+    public javax.swing.JTextField getTotalDebet() {
+        return TotalDebet;
+    }
+
+    /**
+     * @return the TotalKredet
+     */
+    public javax.swing.JTextField getTotalKredet() {
+        return TotalKredet;
+    }
 }
