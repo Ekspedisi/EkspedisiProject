@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="logoutBtn1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="direktoriBtn1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="laporanBtn1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="bukuBtn1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="premiBtn1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="tagihanBtn1" min="-2" max="-2" attributes="0"/>
+                  <Component id="pembayaranBtn1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Component id="homeBtn1" min="-2" max="-2" attributes="0"/>
+              <Component id="orderBtn1" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="homeBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="orderBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="tagihanBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="pembayaranBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="premiBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="bukuBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="laporanBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="direktoriBtn1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="logoutBtn1" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="ekspedisi.component.BukuBtn" name="bukuBtn1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bukuBtn1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="ekspedisi.component.HomeBtn" name="homeBtn1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="ekspedisi.component.OrderBtn" name="orderBtn1">
+    </Component>
+    <Component class="ekspedisi.component.TagihanBtn" name="tagihanBtn1">
+    </Component>
+    <Component class="ekspedisi.component.PembayaranBtn" name="pembayaranBtn1">
+    </Component>
+    <Component class="ekspedisi.component.PremiBtn" name="premiBtn1">
+    </Component>
+    <Component class="ekspedisi.component.LaporanBtn" name="laporanBtn1">
+    </Component>
+    <Component class="ekspedisi.component.DirektoriBtn" name="direktoriBtn1">
+    </Component>
+    <Component class="ekspedisi.component.LogoutBtn" name="logoutBtn1">
+    </Component>
+  </SubComponents>
+</Form>

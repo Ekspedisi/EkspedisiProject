@@ -75,7 +75,6 @@ public class OrderPanel extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         JumlahPbr = new javax.swing.JTextField();
-        BoronganCb = new javax.swing.JCheckBox();
         GabPanel = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -91,10 +90,13 @@ public class OrderPanel extends javax.swing.JPanel {
         jLabel39 = new javax.swing.JLabel();
         JumlahGab = new javax.swing.JTextField();
         AddOrder = new javax.swing.JButton();
+        BoronganCb = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         nopolTxt = new javax.swing.JTextField();
         supirTxt = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Script MT Bold", 1, 24)); // NOI18N
         jLabel1.setText("Order DM");
@@ -141,6 +143,8 @@ public class OrderPanel extends javax.swing.JPanel {
 
         jLabel37.setText(":");
 
+        PabrikPanel.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel12.setText("Pabrik");
 
         jLabel19.setText("Berat");
@@ -160,8 +164,6 @@ public class OrderPanel extends javax.swing.JPanel {
         jLabel26.setText("Rp. ");
 
         jLabel27.setText("/ kg");
-
-        BoronganCb.setText("Borongan");
 
         javax.swing.GroupLayout PabrikPanelLayout = new javax.swing.GroupLayout(PabrikPanel);
         PabrikPanel.setLayout(PabrikPanelLayout);
@@ -195,8 +197,7 @@ public class OrderPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel26)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(OngkosTxt))
-                                    .addComponent(JumlahPbr)))
-                            .addComponent(BoronganCb))
+                                    .addComponent(JumlahPbr))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PabrikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel27)
@@ -226,10 +227,10 @@ public class OrderPanel extends javax.swing.JPanel {
                     .addComponent(jLabel21)
                     .addComponent(jLabel24)
                     .addComponent(JumlahPbr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BoronganCb)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        GabPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel28.setText("PT Gabungan");
 
@@ -258,12 +259,16 @@ public class OrderPanel extends javax.swing.JPanel {
             }
         });
 
+        BoronganCb.setText("Borongan");
+
         javax.swing.GroupLayout GabPanelLayout = new javax.swing.GroupLayout(GabPanel);
         GabPanel.setLayout(GabPanelLayout);
         GabPanelLayout.setHorizontalGroup(
             GabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GabPanelLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(BoronganCb)
+                .addGap(6, 6, 6)
                 .addGroup(GabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
                     .addGroup(GabPanelLayout.createSequentialGroup()
@@ -322,7 +327,9 @@ public class OrderPanel extends javax.swing.JPanel {
                     .addComponent(jLabel34)
                     .addComponent(JumlahGab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(AddOrder)
+                .addGroup(GabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddOrder)
+                    .addComponent(BoronganCb))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -395,7 +402,7 @@ public class OrderPanel extends javax.swing.JPanel {
                                                 .addComponent(BarangTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(Inv_No, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 23, Short.MAX_VALUE))))
+                                        .addGap(0, 528, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,7 +503,7 @@ public class OrderPanel extends javax.swing.JPanel {
                     .addComponent(PabrikPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
