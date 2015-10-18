@@ -16,6 +16,8 @@ public class LaporanRekening extends javax.swing.JPanel {
      */
     public LaporanRekening() {
         initComponents();
+        jScrollPane1.getViewport().setOpaque(false);
+        jTable1.setGridColor(jTable1.getBackground());
     }
 
     /**
@@ -43,6 +45,8 @@ public class LaporanRekening extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("LAPORAN REKENING");
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

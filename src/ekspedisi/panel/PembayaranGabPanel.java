@@ -16,6 +16,10 @@ public class PembayaranGabPanel extends javax.swing.JPanel {
      */
     public PembayaranGabPanel() {
         initComponents();
+        jScrollPane1.getViewport().setOpaque(false);
+        jScrollPane2.getViewport().setOpaque(false);
+        jTable1.setGridColor(jTable1.getBackground());
+        jTable2.setGridColor(jTable2.getBackground());
     }
 
     /**

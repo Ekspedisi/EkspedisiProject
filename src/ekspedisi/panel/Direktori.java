@@ -22,8 +22,10 @@ public class Direktori extends javax.swing.JPanel {
         initComponents();
         controller = new DirektoriController(this);
         setBackground(Color.WHITE);
-        jScrollPane1.setBackground(Color.white);
+        //jScrollPane1.setBackground(Color.white);
         TabelDir.setBackground(Color.white);
+        jScrollPane1.getViewport().setOpaque(false);
+        TabelDir.setGridColor(TabelDir.getBackground());
         
     }
     

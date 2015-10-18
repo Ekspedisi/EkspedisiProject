@@ -21,6 +21,8 @@ public class BukuBesar extends javax.swing.JPanel {
         initComponents();
         
         controller = new BukuBesarController(this);
+        jScrollPane1.getViewport().setOpaque(false);
+        jTable1.setGridColor(jTable1.getBackground());
     }
 
     /**

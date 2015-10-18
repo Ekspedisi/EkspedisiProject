@@ -16,6 +16,8 @@ public class PenerimaanTagihanPanel extends javax.swing.JPanel {
      */
     public PenerimaanTagihanPanel() {
         initComponents();
+        jScrollPane2.getViewport().setOpaque(false);
+        jTable2.setGridColor(jTable2.getBackground());
     }
 
     /**
