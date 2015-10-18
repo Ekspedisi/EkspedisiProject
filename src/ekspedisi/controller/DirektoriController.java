@@ -11,6 +11,7 @@ import ekspedisi.entity.Truk;
 import ekspedisi.panel.Direktori;
 import ekspedisi.entity.supir;
 import ekspedisi.util.Koneksi;
+import ekspedisi.util.TableColorRender;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -20,6 +21,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.Action;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.TableView;
 
 /**
  *
@@ -29,14 +31,18 @@ public class DirektoriController {
 
     private int Index;
     Direktori dir;
+    int ID;
+    DefaultTableModel tableModel;
     private String state;
 
     public DirektoriController(Direktori dir) {
         this.dir = dir;
         dir.getDirCombo().setSelectedIndex(0);
+        tableModel = (DefaultTableModel) dir.getTabelDir().getModel();
+      
         ChangeTableModel(getIndex());
-        //RefreshTabel();
-
+        RefreshTabel();
+       
         dir.getAddBtn().addActionListener(new ActionListener() {
 
             @Override
@@ -50,6 +56,8 @@ public class DirektoriController {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 state = "update";
+                System.out.println("state = " + state);
+                ID = Integer.parseInt(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 0).toString());
                 showDialog();
             }
         });
@@ -58,7 +66,8 @@ public class DirektoriController {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 state = "delete";
-                showDialog();
+                ID = Integer.parseInt(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 0).toString());
+                InputSupir();
             }
         });
 
@@ -191,32 +200,83 @@ public class DirektoriController {
     }
 
     public void InputSupir() {
-        try {
-            // set isi dari entity supir
-            supir sup = new supir();
-            sup.setNama(dir.getAddSupir1().getNamaSupirTxt().getText());
-            sup.setAlamat(dir.getAddSupir1().getAlamatSupirTxt().getText());
-            sup.setNorek(dir.getAddSupir1().getNorekSupirTxt().getText());
-            sup.setNarek(dir.getAddSupir1().getNarekSupirTxt().getText());
-            sup.setBank(dir.getAddSupir1().getBankSupirTxt().getText());
-            //input database
-            Koneksi.createConnection();
-            Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into Supir VALUES(1,'" + sup.getNama() + "','" + sup.getAlamat() + "','" + sup.getNorek() + "','" + sup.getNarek() + "','" + sup.getBank() + "')";
-            System.out.print(sql);
-            statement.execute(sql);
-            //refresh textfield
-            dir.getAddSupir1().getNamaSupirTxt().setText("");
-            dir.getAddSupir1().getAlamatSupirTxt().setText("");
-            dir.getAddSupir1().getNorekSupirTxt().setText("");
-            dir.getAddSupir1().getNarekSupirTxt().setText("");
-            dir.getAddSupir1().getBankSupirTxt().setText("");
-            RefreshTabel();
+        // set isi dari entity supir
+        supir sup = new supir();
+        sup.setNama(dir.getAddSupir1().getNamaSupirTxt().getText());
+        sup.setAlamat(dir.getAddSupir1().getAlamatSupirTxt().getText());
+        sup.setNorek(dir.getAddSupir1().getNorekSupirTxt().getText());
+        sup.setNarek(dir.getAddSupir1().getNarekSupirTxt().getText());
+        sup.setBank(dir.getAddSupir1().getBankSupirTxt().getText());
+        if (getState() == "insert") {
+            try {
+                //input database
+                Koneksi.createConnection();
+                Statement statement = Koneksi.conn.createStatement();
+                String sql = "INSERT into Supir VALUES(1,'" + sup.getNama() + "','" + sup.getAlamat() + "','" + sup.getNorek() + "','" + sup.getNarek() + "','" + sup.getBank() + "')";
+                System.out.print(sql);
+                statement.executeUpdate(sql);
+                statement.close();
+                Koneksi.closeConnection();
+                //refresh textfield
+                dir.getAddSupir1().getNamaSupirTxt().setText("");
+                dir.getAddSupir1().getAlamatSupirTxt().setText("");
+                dir.getAddSupir1().getNorekSupirTxt().setText("");
+                dir.getAddSupir1().getNarekSupirTxt().setText("");
+                dir.getAddSupir1().getBankSupirTxt().setText("");
+                RefreshTabel();
 
-        } catch (SQLException f) {
-            System.out.println(f.getMessage());
-            System.out.println("sql supir error");
+            } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql supir error");
 
+            }
+        } else if (getState() == "update") {
+            try {
+                //input database
+                Koneksi.createConnection();
+                Statement statement = Koneksi.conn.createStatement();
+               String sql = "UPDATE Supir SET Nama = '" + sup.getNama() 
+                       +"', Alamat = '" + sup.getAlamat() 
+                       +"', NoRekening = '" + sup.getNorek() 
+                       + "', NamaRekening = '" + sup.getNarek() 
+                       + "',Bank = '" + sup.getBank() 
+                       + "' WHERE ID = " + ID ;
+                System.out.println(sql);
+                statement.executeUpdate(sql);
+                statement.close();
+                Koneksi.closeConnection();
+                //refresh textfield
+                dir.getAddSupir1().getNamaSupirTxt().setText("");
+                dir.getAddSupir1().getAlamatSupirTxt().setText("");
+                dir.getAddSupir1().getNorekSupirTxt().setText("");
+                dir.getAddSupir1().getNarekSupirTxt().setText("");
+                dir.getAddSupir1().getBankSupirTxt().setText("");
+                RefreshTabel();
+
+            } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql supir error");
+
+            }
+        } else if (getState() == "delete") {
+            try {
+                //input database
+                Koneksi.createConnection();
+                Statement statement = Koneksi.conn.createStatement();
+               String sql = "DELETE FROM Supir WHERE ID = " + ID ;
+                System.out.println(sql);
+                statement.executeUpdate(sql);
+                statement.close();
+                Koneksi.closeConnection();
+                RefreshTabel();
+
+            } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql supir error");
+
+            }
+        } else {
+            System.out.println("gagal crud");
         }
     }
 
@@ -289,6 +349,13 @@ public class DirektoriController {
             model.addColumn("Nama Rekening");
             model.addColumn("Bank");
 
+        }
+        ColoringTable();
+    }
+
+    public void ColoringTable() {
+        for (int i = 0; i < dir.getTabelDir().getColumnCount(); i++) {
+            dir.getTabelDir().getColumnModel().getColumn(i).setCellRenderer(new TableColorRender());
         }
     }
 
@@ -465,8 +532,17 @@ public class DirektoriController {
 
     public void showDialog() {
         if (getIndex() == 0) {
+            if (state == "update") {
+                ID = Integer.parseInt(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 0).toString());
+                dir.getAddSupir1().getNamaSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 1).toString());
+                dir.getAddSupir1().getAlamatSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 2).toString());
+                dir.getAddSupir1().getNorekSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 3).toString());
+                dir.getAddSupir1().getNarekSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 4).toString());
+                dir.getAddSupir1().getBankSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 5).toString());
+
+            }
             dir.getDialogSupir().pack();
-            dir.getDialogSupir().setLocationRelativeTo(null);
+            dir.getDialogSupir().setLocationRelativeTo(dir);
             dir.getDialogSupir().setVisible(true);
 
         } else if (getIndex() == 1) {
