@@ -45,7 +45,7 @@ public class PenerimaanTagihanPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Penerimaan Tagihan");
+        jLabel1.setText("Tagihan / Invoice");
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -108,7 +108,7 @@ public class PenerimaanTagihanPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jLabel2.setText("Daftar Tagihan yang diterima  :");
+        jLabel2.setText("Tagihan utk DM");
 
         InsertBtn.setText("Insert..");
 
