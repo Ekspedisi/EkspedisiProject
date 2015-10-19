@@ -255,7 +255,9 @@ public class OrderController {
         try {
             Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String query = "SELECT MAX(NoDM) AS no FROM DM";
+            String query = "SELECT gol, Max(gpo) AS maximal_gaji_pokok " +
+                        "FROM g_pokok\n" +
+                        "GROUP BY gol";
                 ResultSet rs = statement.executeQuery(query);
 		while(rs.next()) {
                     if(rs.first() == false)    {
