@@ -28,6 +28,7 @@ public class DM {
     private int jumlahg;
     private boolean borongan;
     private String tanggal;
+    private boolean pembayaran;
 
     /**
      * @return the noDM
@@ -279,6 +280,20 @@ public class DM {
      */
     public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
+    }
+
+    /**
+     * @return the pembayaran
+     */
+    public boolean isPembayaran() {
+        return pembayaran;
+    }
+
+    /**
+     * @param pembayaran the pembayaran to set
+     */
+    public void setPembayaran(boolean pembayaran) {
+        this.pembayaran = pembayaran;
     }
     
     

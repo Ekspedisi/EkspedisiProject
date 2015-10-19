@@ -113,7 +113,7 @@ public class OrderPanel extends javax.swing.JPanel {
 
         jLabel7.setText(":");
 
-        gabunganCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        gabunganCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
         jLabel8.setText("Tanggal");
 
@@ -374,7 +374,6 @@ public class OrderPanel extends javax.swing.JPanel {
                             .addComponent(PengirimTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(supirTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nopolTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -29,6 +29,8 @@ import javax.swing.table.DefaultTableModel;
 import java.util.Date;  
 import java.text.DateFormat;  
 import java.text.SimpleDateFormat; 
+import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 
 public class OrderController {
     
@@ -42,8 +44,14 @@ public class OrderController {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                inputOrder();
                 
+                int pilih = JOptionPane.showConfirmDialog(null,"Apakah data yang di input sudah benar?","Confirmation",JOptionPane.YES_NO_OPTION);
+                   
+                if(pilih == JOptionPane.YES_OPTION){
+                      inputOrder();
+                      clearOrder();
+                }else if(pilih == JOptionPane.NO_OPTION){
+                }
             }
         });
         
@@ -71,7 +79,7 @@ public class OrderController {
 
             @Override
             public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
             }
 
             @Override
@@ -79,8 +87,8 @@ public class OrderController {
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
                     ord.getSanguTxt().requestFocus();
                     setDM();
-                    //ord.getNoDM().setText("on progress");
-                }
+                } 
+                
             }
 
             @Override
@@ -99,7 +107,7 @@ public class OrderController {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
-                    ord.getTanggalTxt().requestFocus();
+                    ord.getPengirimTxt().requestFocus();
                     ord.getTanggalTxt().setText(pickTanggal());
                 }
             }
@@ -108,6 +116,79 @@ public class OrderController {
             @Override
             public void keyReleased(KeyEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        
+        ord.getPengirimTxt().addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    ord.getKotaCmb().requestFocus();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        }); 
+        
+        ord.getPenerimaTxt().addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    ord.getTujuanCmb().requestFocus();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        
+        ord.getBarangTxt().addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+               if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    ord.getBeratTxt().requestFocus();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        
+        ord.getBeratTxt().addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+            if (e.getKeyCode()== KeyEvent.VK_ENTER){
+                    ord.getBeratTxt1().setText(ord.getBeratTxt().getText());
+                    ord.getOngkosTxt().requestFocus();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
             }
         });
         
@@ -126,9 +207,7 @@ public class OrderController {
                     int a = Integer.parseInt(ord.getOngkosTxt().getText());
                     ord.getOngkosgab().requestFocus();
                     ord.getJumlahPbr().setText(String.valueOf(jumlahp(a, b)));
-                    ord.getBeratTxt1().setText(ord.getBeratTxt().getText());
-                    
-                }
+                    }
             }
 
             @Override
@@ -137,7 +216,7 @@ public class OrderController {
             }
         });
         
-                
+        
         ord.getBoronganCb().addActionListener(new ActionListener() {
 
             @Override
@@ -201,10 +280,10 @@ public class OrderController {
         dm.setJumlahp(Integer.parseInt(ord.getJumlahPbr().getText()));
         dm.setOngkosg(Integer.parseInt(ord.getOngkosgab().getText()));
         dm.setJumlahg(Integer.parseInt(ord.getJumlahGab().getText()));
-        
+        dm.setPembayaran(false);
         Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into DM VALUES (1,'" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "'," + dm.getSangu() + ",'" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+ ")";
+            String sql = "INSERT into DM VALUES (1,'" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "'," + dm.getSangu() + ",'" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+ "," + dm.isPembayaran() + ")";
             
             System.out.print(sql);
             statement.execute(sql);
@@ -231,11 +310,16 @@ public class OrderController {
         try {
             Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sqlisi= "SELECT NAMA FROM MASTER_KAB ";
+            String sqlisi= "SELECT NAMA FROM MASTER_KAB ORDER BY NAMA ASC ";
+            String sqlgab= "SELECT NAMA FROM PTGabungan ORDER BY NAMA ASC";
             ResultSet res = statement.executeQuery(sqlisi);
+            ResultSet re = statement.executeQuery(sqlgab);
             while (res.next()) {
                 ord.getKotaCmb().addItem(res.getString(1));
                 ord.getTujuanCmb().addItem(res.getString(1));
+            }
+            while (re.next()){
+                ord.getGabunganCmb().addItem(re.getString(1));
             }
         } catch (SQLException f) {
                 System.out.println(f.getMessage());
@@ -255,33 +339,48 @@ public class OrderController {
         try {
             Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String query = "SELECT gol, Max(gpo) AS maximal_gaji_pokok " +
-                        "FROM g_pokok\n" +
-                        "GROUP BY gol";
+            String query = "SELECT TOP 1 NoDM FROM DM order by NoDM desc";
+            
                 ResultSet rs = statement.executeQuery(query);
-		while(rs.next()) {
-                    if(rs.first() == false)    {
-			ord.getNoDM().setText("DM" + t + "001");
-                    }else	{
-                        rs.last();
-			int noDM = rs.getInt(1) + 1;
-			String no = String.valueOf(noDM);
-			int noLong = no.length();
-                            for(int a=0;a<2-noLong;a++)	{
-				no = a + no;
+		if (rs == null){
+                    ord.getNoDM().setText("DM" + t + "001");
+                } else {
+                    while(rs.next()) {
+                    System.out.print("masuk while");
+                    String result = rs.getString(1);
+                    String No = result.substring(8);
+                    int intNo = Integer.parseInt(No);
+                    intNo = intNo +1 ;
+                    ord.getNoDM().setText("DM" + t + intNo);
                             }
-		ord.getNoDM().setText("DM" + t + no);
-                    }
-		}
-		rs.close();
+		
+                rs.close();
                 statement.close();
-		}
-		catch(Exception ex)
-		{
-			System.out.println(ex.getMessage());
-                System.out.println("sql setDM error");
+		}//}
+            }   catch(Exception ex){
+                    System.out.println(ex.getMessage());
+                    System.out.println("sql setDM error");
 		}
 	}
+    public void clearOrder (){
+        ord.getNopolTxt().setText("");
+        ord.getSupirTxt().setText("");
+        ord.getNoDM().setText("");
+        ord.getSanguTxt().setText("");
+        ord.getTanggalTxt().setText("");
+        ord.getPengirimTxt().setText("");
+        ord.getPenerimaTxt().setText("");
+        ord.getBarangTxt().setText("");
+        ord.getInv_No().setText("");
+        ord.getBeratTxt().setText("");
+        ord.getBeratTxt1().setText("");
+        ord.getOngkosTxt().setText("");
+        ord.getJumlahPbr().setText("");
+        ord.getOngkosgab().setText("");
+        ord.getJumlahGab().setText("");
+    }
+    
+    
         
     }
 
