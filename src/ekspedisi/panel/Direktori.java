@@ -22,8 +22,14 @@ public class Direktori extends javax.swing.JPanel {
         initComponents();
         controller = new DirektoriController(this);
         setBackground(Color.WHITE);
-        //jScrollPane1.setBackground(Color.white);
         TabelDir.setBackground(Color.white);
+        TabelDir.enableInputMethods(false);
+        
+        DelBtn.setEnabled(false);
+        if(TabelDir.getSelectedRow()==-1){
+            DelBtn.setEnabled(true);
+        }
+        
         jScrollPane1.getViewport().setOpaque(false);
         TabelDir.setGridColor(TabelDir.getBackground());
         
@@ -92,6 +98,52 @@ public class Direktori extends javax.swing.JPanel {
 
         TabelDir.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},

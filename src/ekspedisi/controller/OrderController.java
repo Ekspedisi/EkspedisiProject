@@ -36,6 +36,7 @@ public class OrderController {
     
     public OrderController (OrderPanel ord){
         this.ord = ord;
+        isiCmb();
         
         ord.getAddOrder().addActionListener(new ActionListener() {
 
@@ -77,7 +78,8 @@ public class OrderController {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()== KeyEvent.VK_ENTER){
                     ord.getSanguTxt().requestFocus();
-                    ord.getNoDM().setText("on progress");
+                    setDM();
+                    //ord.getNoDM().setText("on progress");
                 }
             }
 
@@ -225,41 +227,59 @@ public class OrderController {
         return dateFormat.format(date);  
         
     }
+    public void isiCmb(){
+        try {
+            Koneksi.createConnection();
+            Statement statement = Koneksi.conn.createStatement();
+            String sqlisi= "SELECT NAMA FROM MASTER_KAB ";
+            ResultSet res = statement.executeQuery(sqlisi);
+            while (res.next()) {
+                ord.getKotaCmb().addItem(res.getString(1));
+                ord.getTujuanCmb().addItem(res.getString(1));
+            }
+        } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql isicombo error");
+
+        }
+        
+    }
       
-//    public String setDM(){
-//        String dmNo= "";
-//        
-//        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");  
-//        Date date = new Date();
-//        
-//        String a = dateFormat.format(date);  
-//        try {
-//            Koneksi.createConnection();
-//            Statement statement = Koneksi.conn.createStatement();
-//            String query = "SELECT MAX(right(NoPegawai,1)) AS no FROM Data";
-//                ResultSet rs = statement.executeQuery(query);
-//		while(rs.next()) {
-//                    if(rs.first() == false)    {
-//			txtNoPegawai.setText("P001");
-//                    }else	{
-//                        rs.last();
-//			int noPegawai = rs.getInt(1) + 1;
-//			String no = String.valueOf(noPegawai);
-//			int noLong = no.length();
-//                            for(int a=0;a<2-noLong;a++)	{
-//				no = "00" + no;
-//                            }
-//		txtNoPegawai.setText("P" + no);
-//                    }
-//		}
-//		rs.close();
-//                statement.close();
-//		}
-//		catch(Exception ex)
-//		{
-//			System.out.println(ex);
-//		}
-//	}
-//        
+    public void setDM(){
+        String dmNo= "";
+        
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");  
+        Date date = new Date();
+        
+        String t = dateFormat.format(date);  
+        try {
+            Koneksi.createConnection();
+            Statement statement = Koneksi.conn.createStatement();
+            String query = "SELECT MAX(NoDM) AS no FROM DM";
+                ResultSet rs = statement.executeQuery(query);
+		while(rs.next()) {
+                    if(rs.first() == false)    {
+			ord.getNoDM().setText("DM" + t + "001");
+                    }else	{
+                        rs.last();
+			int noDM = rs.getInt(1) + 1;
+			String no = String.valueOf(noDM);
+			int noLong = no.length();
+                            for(int a=0;a<2-noLong;a++)	{
+				no = a + no;
+                            }
+		ord.getNoDM().setText("DM" + t + no);
+                    }
+		}
+		rs.close();
+                statement.close();
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+                System.out.println("sql setDM error");
+		}
+	}
+        
     }
 
