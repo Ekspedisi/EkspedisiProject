@@ -352,22 +352,20 @@ public class OrderController {
             String query = "SELECT TOP 1 NoDM FROM DM order by NoDM desc";
             
                 ResultSet rs = statement.executeQuery(query);
-		if (rs.next()){
-                    while(rs.next()) {
+		if (!rs.next()){
+                    System.out.print("kosong");
+                    ord.getNoDM().setText("DM" + t + "0001");
+                }
+                while(rs.next()) {
                         System.out.print("masuk while");
                         String result = rs.getString(1);
                         String No = result.substring(8);
                         int intNo = Integer.parseInt(No);
                         intNo = intNo +1 ;
-                        
                         ord.getNoDM().setText("DM" + t + DigitNo(intNo));
                         rs.close();
                         statement.close();                  
                     }
-                }else {
-                    System.out.print("kosong");
-                    ord.getNoDM().setText("DM" + t + "0001");
-                }
                 }   catch(Exception ex){
                     System.out.println(ex.getMessage());
                     System.out.println("sql setDM error");
