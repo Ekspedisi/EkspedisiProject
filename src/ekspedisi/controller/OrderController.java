@@ -293,7 +293,7 @@ public class OrderController {
         dm.setPembayaran(false);
         Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into DM VALUES (1,'" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "'," + dm.getSangu() + ",'" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+  ")";
+            String sql = "INSERT into DM VALUES ('" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "','" + dm.getSangu() + "','" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+  ")";
             
             System.out.print(sql);
             statement.execute(sql);
@@ -356,17 +356,22 @@ public class OrderController {
                     System.out.print("kosong");
                     ord.getNoDM().setText("DM" + t + "001");
                 }   else {
-                while(rs.next()) {
+                
                         System.out.print("masuk while");
                         String result = rs.getString(1);
                         String No = result.substring(8);
-                        int intNo = Integer.parseInt(No);
-                        intNo = intNo +1 ;
-                        ord.getNoDM().setText("DM" + t + DigitNo(intNo));
+                        int idno = Integer.parseInt(No);
+                        idno = idno + 1;
+                        String id = String.valueOf(idno);
+                        int idlong = id.length();
+                        for (int i = 0; i < 4- idlong ; i++){
+                            id = "0" + id;
+                        }
+                        ord.getNoDM().setText("DM" + t + id);
                         rs.close();
                         statement.close();                  
-                }   }
-                }   catch(Exception ex){
+                
+                }}   catch(Exception ex){
                     System.out.println(ex.getMessage());
                     System.out.println("sql setDM error");
 		}
