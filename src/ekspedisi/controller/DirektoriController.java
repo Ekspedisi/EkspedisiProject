@@ -39,10 +39,10 @@ public class DirektoriController {
         this.dir = dir;
         dir.getDirCombo().setSelectedIndex(0);
         tableModel = (DefaultTableModel) dir.getTabelDir().getModel();
-      
+
         ChangeTableModel(getIndex());
         RefreshTabel();
-       
+
         dir.getAddBtn().addActionListener(new ActionListener() {
 
             @Override
@@ -67,7 +67,7 @@ public class DirektoriController {
             public void actionPerformed(ActionEvent ae) {
                 state = "delete";
                 ID = Integer.parseInt(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 0).toString());
-                InputSupir();
+                Delete();
             }
         });
 
@@ -138,6 +138,18 @@ public class DirektoriController {
         dir.getDirCombo().addItemListener(new comboDirListener());
 
     }
+    
+    public void Delete(){
+        if(getIndex()==0){
+            InputSupir();
+        } else if(getIndex()==1){
+            inputTruk();
+        } else if (getIndex()==2){
+            InputPabrik();
+        } else if (getIndex()==3){
+            inputPTGabungan();
+        }
+    }
 
     public void inputTruk() {
         Truk truk = new Truk();
@@ -152,15 +164,15 @@ public class DirektoriController {
                 String sql = "INSERT into Truk VALUES(1,'" + truk.getNopol() + "'," + truk.getMuatan() + ",'" + truk.getMerk() + "','" + truk.getGabungan() + "')";
                 System.out.print(sql);
                 statement.execute(sql);
-            //refresh textfield
+                //refresh textfield
                 dir.getAddTruk1().getNoPolTxt().setText("");
                 dir.getAddTruk1().getMuatanTxt().setText("");
                 dir.getAddTruk1().getMrekTrukTxt().setText("");
                 dir.getAddTruk1().getPTGabTxt().setText("");
                 RefreshTabel();
-        } catch (SQLException f) {
-            System.out.println(f.getMessage());
-            System.out.println("sql Truk error");
+            } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql Truk error");
 
             }
         } else if (getState() == "update") {
@@ -168,11 +180,11 @@ public class DirektoriController {
                 //input database
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-               String sql = "UPDATE Truk SET NomorPolisi = '" + truk.getNopol()
-                       +"', Muatan = '" + truk.getMuatan()
-                       +"', Merk = '" + truk.getMerk()
-                       + "', PTGabungan = '" + truk.getGabungan()
-                       + "' WHERE ID = " + ID ;
+                String sql = "UPDATE Truk SET NomorPolisi = '" + truk.getNopol()
+                        + "', Muatan = '" + truk.getMuatan()
+                        + "', Merk = '" + truk.getMerk()
+                        + "', PTGabungan = '" + truk.getGabungan()
+                        + "' WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -191,10 +203,9 @@ public class DirektoriController {
             }
         } else if (getState() == "delete") {
             try {
-                
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-                String sql = "DELETE FROM Truk WHERE ID = " + ID ;
+                String sql = "DELETE FROM Truk WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -203,13 +214,14 @@ public class DirektoriController {
 
             } catch (SQLException f) {
                 System.out.println(f.getMessage());
-                System.out.println("sql supir error");
+                System.out.println("sql truk error");
 
             }
         } else {
             System.out.println("gagal crud");
         }
-}
+    }
+
     public void inputPTGabungan() {
         Gabungan Gab = new Gabungan();
         Gab.setNama(dir.getAddGabungan1().getNamaGabTxt().getText());
@@ -217,7 +229,7 @@ public class DirektoriController {
         Gab.setNorek(dir.getAddGabungan1().getNorekGabTxt().getText());
         Gab.setNarek(dir.getAddGabungan1().getNarekgabTxt().getText());
         Gab.setBank(dir.getAddGabungan1().getBankgabTxt().getText());
-            
+
         if (getState() == "insert") {
             try {
                 Koneksi.createConnection();
@@ -226,28 +238,28 @@ public class DirektoriController {
 
                 System.out.print(sql);
                 statement.execute(sql);
-            //refresh textfield
+                //refresh textfield
                 dir.getAddGabungan1().getAlamatGabTxt().setText("");
                 dir.getAddGabungan1().getBankgabTxt().setText("");
                 dir.getAddGabungan1().getNarekgabTxt().setText("");
                 dir.getAddGabungan1().getNorekGabTxt().setText("");
                 dir.getAddGabungan1().getNamaGabTxt().setText("");
                 RefreshTabel();
-        } catch (SQLException f) {
-            System.out.println(f.getMessage());
-            System.out.println("sql Gabungan error");
-        }
-        }else if (getState() == "update") {
+            } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql Gabungan error");
+            }
+        } else if (getState() == "update") {
             try {
                 //input database
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-               String sql = "UPDATE PTGabungan SET Nama = '" + Gab.getNama()
-                       +"', Alamat = '" + Gab.getAlamat()
-                       +"', NoRekening = '" + Gab.getNorek()
-                       + "', NamaRekening = '" + Gab.getNarek()
-                       + "', Bank = '" + Gab.getBank()
-                       + "' WHERE ID = " + ID ;
+                String sql = "UPDATE PTGabungan SET Nama = '" + Gab.getNama()
+                        + "', Alamat = '" + Gab.getAlamat()
+                        + "', NoRekening = '" + Gab.getNorek()
+                        + "', NamaRekening = '" + Gab.getNarek()
+                        + "', Bank = '" + Gab.getBank()
+                        + "' WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -267,10 +279,10 @@ public class DirektoriController {
             }
         } else if (getState() == "delete") {
             try {
-                
+
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-                String sql = "DELETE FROM PTGabungan WHERE ID = " + ID ;
+                String sql = "DELETE FROM PTGabungan WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -323,12 +335,12 @@ public class DirektoriController {
                 //input database
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-                String sql = "UPDATE Supir SET Nama = '" + sup.getNama() 
-                       +"', Alamat = '" + sup.getAlamat() 
-                       +"', NoRekening = '" + sup.getNorek() 
-                       + "', NamaRekening = '" + sup.getNarek() 
-                       + "',Bank = '" + sup.getBank() 
-                       + "' WHERE ID = " + ID ;
+                String sql = "UPDATE Supir SET Nama = '" + sup.getNama()
+                        + "', Alamat = '" + sup.getAlamat()
+                        + "', NoRekening = '" + sup.getNorek()
+                        + "', NamaRekening = '" + sup.getNarek()
+                        + "',Bank = '" + sup.getBank()
+                        + "' WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -351,7 +363,7 @@ public class DirektoriController {
                 //input database
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-                String sql = "DELETE FROM Supir WHERE ID = " + ID ;
+                String sql = "DELETE FROM Supir WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -372,7 +384,7 @@ public class DirektoriController {
         Pabrik pabrik = new Pabrik();
         pabrik.setNama(dir.getAddPabrik1().getNamaPabrikTxt().getText());
         pabrik.setAlamat(dir.getAddPabrik1().getAlamatPabrikTxt().getText());
-        if (state == "insert"){
+        if (state == "insert") {
             try {
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
@@ -383,19 +395,19 @@ public class DirektoriController {
                 dir.getAddPabrik1().getNamaPabrikTxt().setText("");
                 dir.getAddPabrik1().getAlamatPabrikTxt().setText("");
                 RefreshTabel();
-        } catch (SQLException f) {
-            System.out.println(f.getMessage());
-            System.out.println("sql pabrik error");
+            } catch (SQLException f) {
+                System.out.println(f.getMessage());
+                System.out.println("sql pabrik error");
 
-        }
-    }else if (getState() == "update") {
+            }
+        } else if (getState() == "update") {
             try {
                 //input database
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-                String sql = "UPDATE pabrik SET Nama = '" + pabrik.getNama() 
-                       +"', Alamat = '" +   pabrik.getAlamat() 
-                       + "' WHERE ID = " + ID ;
+                String sql = "UPDATE pabrik SET Nama = '" + pabrik.getNama()
+                        + "', Alamat = '" + pabrik.getAlamat()
+                        + "' WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -415,7 +427,7 @@ public class DirektoriController {
                 //input database
                 Koneksi.createConnection();
                 Statement statement = Koneksi.conn.createStatement();
-                String sql = "DELETE FROM Pabrik WHERE ID = " + ID ;
+                String sql = "DELETE FROM Pabrik WHERE ID = " + ID;
                 System.out.println(sql);
                 statement.executeUpdate(sql);
                 statement.close();
@@ -656,15 +668,14 @@ public class DirektoriController {
 
     public void showDialog() {
         if (getIndex() == 0) {
-            if (state == "insert"){
+            if (state == "insert") {
                 dir.getAddSupir1().getNamaSupirTxt().setText("");
                 dir.getAddSupir1().getAlamatSupirTxt().setText("");
                 dir.getAddSupir1().getNorekSupirTxt().setText("");
                 dir.getAddSupir1().getNarekSupirTxt().setText("");
                 dir.getAddSupir1().getBankSupirTxt().setText("");
-            
-            }
-            else if (state == "update") {
+
+            } else if (state == "update") {
                 ID = Integer.parseInt(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 0).toString());
                 dir.getAddSupir1().getNamaSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 1).toString());
                 dir.getAddSupir1().getAlamatSupirTxt().setText(tableModel.getValueAt(dir.getTabelDir().getSelectedRow(), 2).toString());
@@ -678,7 +689,7 @@ public class DirektoriController {
             dir.getDialogSupir().setVisible(true);
 
         } else if (getIndex() == 1) {
-            if (state == "insert"){
+            if (state == "insert") {
                 dir.getAddTruk1().getNoPolTxt().setText("");
                 dir.getAddTruk1().getMuatanTxt().setText("");
                 dir.getAddTruk1().getMrekTrukTxt().setText("");
@@ -696,7 +707,7 @@ public class DirektoriController {
             dir.getDialogTruk().setVisible(true);
             dir.getDialogTruk().setLocationRelativeTo(null);
         } else if (getIndex() == 2) {
-            if (state == "insert"){
+            if (state == "insert") {
                 dir.getAddPabrik1().getAlamatPabrikTxt().setText("");
                 dir.getAddPabrik1().getNamaPabrikTxt().setText("");
 
@@ -710,7 +721,7 @@ public class DirektoriController {
             dir.getDialogPabrik().setVisible(true);
 
         } else if (getIndex() == 3) {
-            if (state == "insert"){
+            if (state == "insert") {
                 dir.getAddGabungan1().getAlamatGabTxt().setText("");
                 dir.getAddGabungan1().getBankgabTxt().setText("");
                 dir.getAddGabungan1().getNarekgabTxt().setText("");

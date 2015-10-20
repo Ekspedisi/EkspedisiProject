@@ -72,7 +72,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Penerimaan Tagihan"/>
+        <Property name="text" type="java.lang.String" value="Tagihan / Invoice"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -103,7 +103,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Daftar Tagihan yang diterima  :"/>
+        <Property name="text" type="java.lang.String" value="Tagihan utk DM"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="InsertBtn">
