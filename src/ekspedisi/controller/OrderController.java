@@ -354,8 +354,8 @@ public class OrderController {
                 ResultSet rs = statement.executeQuery(query);
 		if (!rs.next()){
                     System.out.print("kosong");
-                    ord.getNoDM().setText("DM" + t + "0001");
-                }
+                    ord.getNoDM().setText("DM" + t + "001");
+                }   else {
                 while(rs.next()) {
                         System.out.print("masuk while");
                         String result = rs.getString(1);
@@ -365,7 +365,7 @@ public class OrderController {
                         ord.getNoDM().setText("DM" + t + DigitNo(intNo));
                         rs.close();
                         statement.close();                  
-                    }
+                }   }
                 }   catch(Exception ex){
                     System.out.println(ex.getMessage());
                     System.out.println("sql setDM error");
