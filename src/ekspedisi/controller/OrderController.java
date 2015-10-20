@@ -39,7 +39,7 @@ public class OrderController {
     public OrderController (OrderPanel ord){
         this.ord = ord;
         isiCmb();
-        
+        isiOrder();
         ord.getAddOrder().addActionListener(new ActionListener() {
 
             @Override
@@ -257,6 +257,16 @@ public class OrderController {
             }
         });
         
+        ord.getInvoiceBtn().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ord.getDialogInvoice().pack();
+                ord.getDialogInvoice().setLocationRelativeTo(null);
+                ord.getDialogInvoice().setVisible(true);
+          
+            }
+        });
     }
     public void inputOrder(){
         try {
@@ -342,22 +352,22 @@ public class OrderController {
             String query = "SELECT TOP 1 NoDM FROM DM order by NoDM desc";
             
                 ResultSet rs = statement.executeQuery(query);
-		if (rs == null){
-                    ord.getNoDM().setText("DM" + t + "001");
-                } else {
+		if (rs.next()){
                     while(rs.next()) {
-                    System.out.print("masuk while");
-                    String result = rs.getString(1);
-                    String No = result.substring(8);
-                    int intNo = Integer.parseInt(No);
-                    intNo = intNo +1 ;
-                    ord.getNoDM().setText("DM" + t + intNo);
-                            }
-		
-                rs.close();
-                statement.close();
-		}//}
-            }   catch(Exception ex){
+                        System.out.print("masuk while");
+                        String result = rs.getString(1);
+                        String No = result.substring(8);
+                        int intNo = Integer.parseInt(No);
+                        intNo = intNo +1 ;
+                        ord.getNoDM().setText("DM" + t + intNo);
+                        rs.close();
+                        statement.close();                  
+                    }
+                }else {
+                    System.out.print("kosong");
+                    ord.getNoDM().setText("DM" + t + "0001");
+                }
+                }   catch(Exception ex){
                     System.out.println(ex.getMessage());
                     System.out.println("sql setDM error");
 		}
@@ -378,6 +388,19 @@ public class OrderController {
         ord.getJumlahPbr().setText("");
         ord.getOngkosgab().setText("");
         ord.getJumlahGab().setText("");
+    }
+    
+    public void isiOrder(){
+        DefaultTableModel model = (DefaultTableModel) ord.getOrderTabel().getModel();
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        model.addColumn("No DM");
+        model.addColumn("Nopol");
+        model.addColumn("Pengirim");
+        model.addColumn("Tujuan");
+        model.addColumn("Tagihan");
+        //model.addColumn("Bank");
+        
     }
     
     
