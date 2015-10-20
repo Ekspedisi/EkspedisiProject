@@ -283,7 +283,7 @@ public class OrderController {
         dm.setPenerima(ord.getPenerimaTxt().getText());
         dm.setTujuan(ord.getTujuanCmb().getSelectedItem().toString());
         dm.setBarang(ord.getBarangTxt().getText());
-        dm.setInvoice(ord.getInv_No().getText());
+        dm.setInvoice("invoice");
         dm.setBerat(Integer.parseInt(ord.getBeratTxt().getText()));
         ord.setBeratTxt1(ord.getBeratTxt());
         dm.setOngkosp(Integer.parseInt(ord.getOngkosTxt().getText()));
@@ -293,7 +293,7 @@ public class OrderController {
         dm.setPembayaran(false);
         Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into DM VALUES (1,'" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "'," + dm.getSangu() + ",'" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+ "," + dm.isPembayaran() + ")";
+            String sql = "INSERT into DM VALUES (1,'" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "'," + dm.getSangu() + ",'" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+  ")";
             
             System.out.print(sql);
             statement.execute(sql);
@@ -359,7 +359,8 @@ public class OrderController {
                         String No = result.substring(8);
                         int intNo = Integer.parseInt(No);
                         intNo = intNo +1 ;
-                        ord.getNoDM().setText("DM" + t + intNo);
+                        
+                        ord.getNoDM().setText("DM" + t + DigitNo(intNo));
                         rs.close();
                         statement.close();                  
                     }
@@ -403,6 +404,24 @@ public class OrderController {
         
     }
     
+    public int DigitNo(int number)
+{
+    int DigitNo = 0;
+    int length = String.valueOf(number).length();
+    if(length == 1)
+    {
+        DigitNo = 00+number;
+    }
+    if(length == 2)
+    {
+        DigitNo = 0+number;
+    }
+    if(length == 3)
+    {
+        DigitNo = number;
+    }
+    return DigitNo;
+}
     
         
     }
