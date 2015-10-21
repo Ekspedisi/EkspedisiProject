@@ -293,10 +293,13 @@ public class OrderController {
         dm.setPembayaran(false);
         Koneksi.createConnection();
             Statement statement = Koneksi.conn.createStatement();
-            String sql = "INSERT into DM VALUES ('" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "','" + dm.getSangu() + "','" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+  ")";
+            String sql = "INSERT into DM (NoDM, PTGabungan, Nopol, Supir, Sangu, Tanggal, Pengirim, Kota, Penerima, Tujuan, Barang, Invoice, Berat, OngkosP, JumlahP, OngkosG, JumlahG) "
+                    + "VALUES ('" + dm.getNoDM() + "','" + dm.getGabungan() + "','" + dm.getNopol() + "','" + dm.getSupir() + "','" + dm.getSangu() + "','" + dm.getTanggal()+ "','" + dm.getPengirim() + "','" + dm.getKota() + "','" + dm.getPenerima() + "','" + dm.getTujuan() + "','" + dm.getBarang() + "','" + dm.getInvoice() + "'," + dm.getBerat() + "," + dm.getOngkosp() + "," + dm.getJumlahp() + "," + dm.getOngkosg() + "," + dm.getJumlahg()+  ")";
             
             System.out.print(sql);
             statement.execute(sql);
+            statement.close();
+            Koneksi.closeConnection();
         }   catch (SQLException f) {
                 System.out.println(f.getMessage());
                 System.out.println("sql DM error");
