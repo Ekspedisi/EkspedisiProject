@@ -44,6 +44,7 @@ public class AddTransaksi extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         DetailKredit = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(300, 300));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
